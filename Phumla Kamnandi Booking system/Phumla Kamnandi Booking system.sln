@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34003.232
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Phumla Kamnandi Booking system", "Phumla Kamnandi Booking system\Phumla Kamnandi Booking system.csproj", "{496EF9B4-5A7D-4DE1-A700-E30C70AD593B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{496EF9B4-5A7D-4DE1-A700-E30C70AD593B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{496EF9B4-5A7D-4DE1-A700-E30C70AD593B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{496EF9B4-5A7D-4DE1-A700-E30C70AD593B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{496EF9B4-5A7D-4DE1-A700-E30C70AD593B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1DEFBAAF-B909-49D3-A6F6-FC58994284E3}
+	EndGlobalSection
+EndGlobal
