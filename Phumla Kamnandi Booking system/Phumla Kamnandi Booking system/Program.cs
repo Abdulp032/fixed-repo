@@ -17,6 +17,15 @@ namespace Phumla_Kamnandi_Booking_system
             Application.SetCompatibleTextRenderingDefault(false);
 
             Application.Run(new UserInterface());
+
+        }
+
+        public void searchAvailableRoom()
+        {
+            // makes this query
+            //SELECT RoomID
+            //        FROM Rooms
+            //        WHERE RoomID NOT IN(SELECT RoomID FROM Bookings WHERE CheckIn <= theInputtedCheckingDate AND CheckOut >= theOutputtedCheckoutDate);
         }
     }
 }

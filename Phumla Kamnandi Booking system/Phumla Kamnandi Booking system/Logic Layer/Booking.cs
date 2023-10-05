@@ -66,6 +66,12 @@ namespace Phumla_Kamnandi_Booking_system.Logic_Layer
             this.price = calculatePrice();
         }
 
+        // Default constructor allowing later instantiation of properties
+        public Booking()
+        {
+
+        }
+
         public static string generateUniqueBookingID()
         {
             return "nothing yet";       // must still add implementation

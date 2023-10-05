@@ -74,6 +74,12 @@ namespace Phumla_Kamnandi_Booking_system.Logic_Layer
         }
 
         
+        // Default Constructor to allow later assignment of fields
+        public Guest()
+        {
+
+        }
+        
         public static string generateUniqueID()
         {
             return "nothing yet";

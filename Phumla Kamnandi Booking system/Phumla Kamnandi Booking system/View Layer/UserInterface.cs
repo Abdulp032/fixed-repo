@@ -15,8 +15,8 @@ namespace Phumla_Kamnandi_Booking_system.View_Layer
         List<Panel> listPanel = new List<Panel>();
         int index;
         public UserInterface()
-        {
-            InitializeComponent();
+        {  
+            InitializeComponent(); 
         }
 
         private void UserInterface_Load(object sender, EventArgs e)

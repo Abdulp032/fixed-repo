@@ -39,8 +39,8 @@
             this.PreviousButton = new System.Windows.Forms.Button();
             this.NextButton = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.page2 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
@@ -150,6 +150,15 @@
             this.panel2.Size = new System.Drawing.Size(803, 452);
             this.panel2.TabIndex = 10;
             // 
+            // page2
+            // 
+            this.page2.AutoSize = true;
+            this.page2.Location = new System.Drawing.Point(363, 57);
+            this.page2.Name = "page2";
+            this.page2.Size = new System.Drawing.Size(49, 16);
+            this.page2.TabIndex = 9;
+            this.page2.Text = "page 2";
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.checkOutDatePicker);
@@ -164,15 +173,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(803, 452);
             this.panel1.TabIndex = 8;
-            // 
-            // page2
-            // 
-            this.page2.AutoSize = true;
-            this.page2.Location = new System.Drawing.Point(363, 57);
-            this.page2.Name = "page2";
-            this.page2.Size = new System.Drawing.Size(49, 16);
-            this.page2.TabIndex = 9;
-            this.page2.Text = "page 2";
             // 
             // panel3
             // 
@@ -196,9 +196,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(827, 567);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.NextButton);
             this.Controls.Add(this.PreviousButton);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Name = "UserInterface";
