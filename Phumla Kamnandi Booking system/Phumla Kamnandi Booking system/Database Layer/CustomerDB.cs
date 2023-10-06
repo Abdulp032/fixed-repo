@@ -29,17 +29,18 @@ namespace Phumla_Kamnandi_Booking_system.Database_Layer
         #endregion
 
         #region Property Methods
-
+/*         this block of code has an error that needs to be fixed 
         public Collection<Guest> AllGuests
         {
             get { return guests; }
         }
-
+*/
+/*      this block also has som error
         public Collection<Booking> AllBookings
         {
             get { return bookings; }
         }
-
+*/
         #endregion
 
         #region Constructors
@@ -79,18 +80,21 @@ namespace Phumla_Kamnandi_Booking_system.Database_Layer
                     aBooking.RoomID = Convert.ToInt32(myRow["RoomID"]); // room ID is an int?
                     aBooking.CheckInDate = Convert.ToString(myRow["CheckInDate"]);
                     aBooking.CheckOutDate = Convert.ToString(myRow["CheckOutDate"]);
-                    aBooking.Price = Convert.ToDecimal(myRow["Price"]);
+                    aBooking.Price = (float)Convert.ToDecimal(myRow["Price"]);
 
                     bookings.Add(aBooking);
                 }
             }
 
+
             // Reading each row of the Guests Table and creating Guest objects for the Collection
+            // this first line also has some error here
+           /*
             foreach (Data myRow_loopVariable in dsMain.Tables["Guests"].Rows)
             {
                 myRow = myRow_loopVariable;
 
-                if(!(myRow.RowState = DataRowState.Deleted))
+                if((myRow.RowState != DataRowState.Deleted))
                 {
                     aGuest = new Guest();
                     aGuest.GuestID = Convert.ToString(myRow["GuestID"]).TrimEnd();
@@ -103,6 +107,7 @@ namespace Phumla_Kamnandi_Booking_system.Database_Layer
                     guests.Add(aGuest);
                 }
             }
+           */
 
         }
 

@@ -39,13 +39,15 @@
             this.PreviousButton = new System.Windows.Forms.Button();
             this.NextButton = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.page2 = new System.Windows.Forms.Label();
+            this.availableRoomsLabel = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -124,9 +126,9 @@
             // 
             // PreviousButton
             // 
-            this.PreviousButton.Location = new System.Drawing.Point(159, 486);
+            this.PreviousButton.Location = new System.Drawing.Point(146, 486);
             this.PreviousButton.Name = "PreviousButton";
-            this.PreviousButton.Size = new System.Drawing.Size(75, 23);
+            this.PreviousButton.Size = new System.Drawing.Size(88, 33);
             this.PreviousButton.TabIndex = 8;
             this.PreviousButton.Text = "Previous";
             this.PreviousButton.UseVisualStyleBackColor = true;
@@ -136,7 +138,7 @@
             // 
             this.NextButton.Location = new System.Drawing.Point(578, 486);
             this.NextButton.Name = "NextButton";
-            this.NextButton.Size = new System.Drawing.Size(75, 23);
+            this.NextButton.Size = new System.Drawing.Size(114, 33);
             this.NextButton.TabIndex = 9;
             this.NextButton.Text = "Next";
             this.NextButton.UseVisualStyleBackColor = true;
@@ -144,20 +146,22 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.page2);
+            this.panel2.Controls.Add(this.dataGridView1);
+            this.panel2.Controls.Add(this.availableRoomsLabel);
             this.panel2.Location = new System.Drawing.Point(12, 12);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(803, 452);
             this.panel2.TabIndex = 10;
             // 
-            // page2
+            // availableRoomsLabel
             // 
-            this.page2.AutoSize = true;
-            this.page2.Location = new System.Drawing.Point(363, 57);
-            this.page2.Name = "page2";
-            this.page2.Size = new System.Drawing.Size(49, 16);
-            this.page2.TabIndex = 9;
-            this.page2.Text = "page 2";
+            this.availableRoomsLabel.AutoSize = true;
+            this.availableRoomsLabel.Location = new System.Drawing.Point(295, 23);
+            this.availableRoomsLabel.Name = "availableRoomsLabel";
+            this.availableRoomsLabel.Size = new System.Drawing.Size(177, 16);
+            this.availableRoomsLabel.TabIndex = 9;
+            this.availableRoomsLabel.Text = "There are X rooms available";
+            this.availableRoomsLabel.Click += new System.EventHandler(this.availableRoomsLabel_Click);
             // 
             // panel1
             // 
@@ -173,6 +177,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(803, 452);
             this.panel1.TabIndex = 8;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // panel3
             // 
@@ -191,6 +196,16 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "page 3";
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(282, 71);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(201, 264);
+            this.dataGridView1.TabIndex = 10;
+            // 
             // UserInterface
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -198,9 +213,9 @@
             this.ClientSize = new System.Drawing.Size(827, 567);
             this.Controls.Add(this.NextButton);
             this.Controls.Add(this.PreviousButton);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel2);
             this.Name = "UserInterface";
             this.Text = "UserInterface";
             this.Load += new System.EventHandler(this.UserInterface_Load);
@@ -210,6 +225,7 @@
             this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -228,8 +244,9 @@
         private System.Windows.Forms.Button NextButton;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label page2;
+        private System.Windows.Forms.Label availableRoomsLabel;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

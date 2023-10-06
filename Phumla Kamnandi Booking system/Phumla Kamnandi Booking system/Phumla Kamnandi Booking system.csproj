@@ -63,6 +63,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Database Layer\CustomerDB.cs" />
+    <Compile Include="Database Layer\DB.cs" />
     <Compile Include="Logic Layer\Booking.cs" />
     <Compile Include="Logic Layer\Guest.cs" />
     <Compile Include="Logic Layer\Hotel.cs" />
