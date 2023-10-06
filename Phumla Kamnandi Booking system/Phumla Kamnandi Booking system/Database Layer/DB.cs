@@ -87,6 +87,7 @@ namespace Phumla_Kamnandi_Booking_system.Database_Layer
             return success;
         }
 
+        #region CRUD Operations
         // Returns a table of the rooms available, filtered between a given date period
         public static DataTable getAvailableRoomsTable(DateTime checkInDate, DateTime checkOutDate)
         {
@@ -154,7 +155,7 @@ namespace Phumla_Kamnandi_Booking_system.Database_Layer
 
             // Then Delete from Guests table
             cmd = new SqlCommand("DELETE FROM Guests WHERE (GuestID=@GuestID)", con);
-            cmd.Parameters.AddWithValue("@GuestID", guestID)
+            cmd.Parameters.AddWithValue("@GuestID", guestID);
             cmd.ExecuteNonQuery();
             con.Close();
         }
@@ -162,21 +163,44 @@ namespace Phumla_Kamnandi_Booking_system.Database_Layer
         public static void DeleteBooking(string bookingID)
         {
             con.Open();
-            SqlCommand cmd = new SqlCommand("DELETE FROM Bookings WHERE (BookingID=@BookingID)");
+            SqlCommand cmd = new SqlCommand("DELETE FROM Bookings WHERE (BookingID=@BookingID)", con);
+            cmd.Parameters.AddWithValue("@BookingID", bookingID);
+            cmd.ExecuteNonQuery();
             con.Close();
         }
 
-        public static void UpdateGuest(string guestID)
+        public static void UpdateGuest(string guestID, string newIDNumber, string newName, string newSurname, string newPhoneNumber, string newEmail, string newAddress)
         {
             con.Open();
+            SqlCommand cmd = new SqlCommand("UPDATE Guests SET (IDNumber=@IDNumber, Name=@Name, Surname=@Surname, PhoneNumber=@PhoneNumber, " +
+                                            "Email=@Email, Address=@Address) WHERE GuestID=@GuestID", con);
+            cmd.Parameters.AddWithValue("@GuestID", guestID); // guestID cannot be changed
+            cmd.Parameters.AddWithValue("@IDNumber", newIDNumber);
+            cmd.Parameters.AddWithValue("@Name", newName);
+            cmd.Parameters.AddWithValue("@Surname", newSurname);
+            cmd.Parameters.AddWithValue("@PhoneNumber", newPhoneNumber);
+            cmd.Parameters.AddWithValue("@Email", newEmail);
+            cmd.Parameters.AddWithValue("@Address", newAddress);
+
+            cmd.ExecuteNonQuery();
             con.Close();
         }
 
-        public static void UpdateBooking(string bookingID)
+        public static void UpdateBooking(string bookingID, int newRoomID, string newCheckInDate, string newCheckOutDate, float newPrice)
         {
             con.Open();
+            SqlCommand cmd = new SqlCommand("UPDATE Bookings SET (RoomID=@RoomID, CheckInDate=@CheckInDate, CheckOutDate=@CheckOutDate, Price=@Price) " +
+                                            "WHERE BookingID=@BookingID", con);
+            cmd.Parameters.AddWithValue("@BookingID", bookingID); // bookingID cannot be changed
+            cmd.Parameters.AddWithValue("@RoomID", newRoomID);
+            cmd.Parameters.AddWithValue("@CheckInDate", newCheckInDate);
+            cmd.Parameters.AddWithValue("@CheckOutDate", newCheckOutDate);
+            cmd.Parameters.AddWithValue("@Price", newPrice);
+
+            cmd.ExecuteNonQuery();
             con.Close();
         }
-        
+        #endregion
+
     }
 }

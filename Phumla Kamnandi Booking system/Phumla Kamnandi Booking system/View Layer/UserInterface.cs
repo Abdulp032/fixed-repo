@@ -25,13 +25,18 @@ namespace Phumla_Kamnandi_Booking_system.View_Layer
 
         private void UserInterface_Load(object sender, EventArgs e)
         {
-            listPanel.Add(homePanel);
-            listPanel.Add(reservationPanel);
-            listPanel.Add(availableRoomsPanel);
-            listPanel.Add(newGuestOrOldGuestPanel);
+            listPanel.Add(homePanel);               // at index 0
+            listPanel.Add(reservationPanel);        // at index 1
+            listPanel.Add(availableRoomsPanel);     // at index 2
+            listPanel.Add(newGuestOrOldGuestPanel); // at index 3
+            listPanel.Add(addGuestPanel);           // at index 4
+            listPanel.Add(placeholder);             // at index 5
             listPanel[index].BringToFront();
             NextButton.Visible = false;
             PreviousButton.Visible = false;
+
+            //DB.UpdateBooking("none", 4, "08/10/2012", "09/10/2023", 300);
+
         }
 
         private void PreviousButton_Click(object sender, EventArgs e)
@@ -51,6 +56,10 @@ namespace Phumla_Kamnandi_Booking_system.View_Layer
             if (index == 3)
             {
                 NextButton.Visible = false;
+            }
+            if (index!= 4)
+            {
+                confirmButton.Visible = false;
             }
 
 
@@ -78,6 +87,7 @@ namespace Phumla_Kamnandi_Booking_system.View_Layer
             {
                 NextButton.Visible = false;
             }
+
         }
 
         private void makeReservationButton_Click(object sender, EventArgs e)
@@ -88,6 +98,21 @@ namespace Phumla_Kamnandi_Booking_system.View_Layer
             PreviousButton.Visible = true;
         }
 
+        private void addNewGuestButton_Click(object sender, EventArgs e)
+        {
+            addGuestPanel.BringToFront();
+            index = 4;
+            NextButton.Visible=false;
+            confirmButton.Visible = true;
 
+        }
+
+        private void confirmButton_Click(object sender, EventArgs e)
+        {
+           
+            Guest guest = new Guest(idNumTxtbx.Text,nameTxtBx.Text, surnameTxtBx.Text,phoneNumTxtBx.Text,emailTxtBx.Text,addressTxtBx.Text);
+            DB.InsertGuest(guest);
+            
+        }
     }
 }

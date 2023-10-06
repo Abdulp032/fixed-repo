@@ -74,7 +74,7 @@ namespace Phumla_Kamnandi_Booking_system.Logic_Layer
 
         public static string generateUniqueBookingID()
         {
-            return "nothing yet";       // must still add implementation
+            return "none";       // must still add implementation
         }
 
         public float calculatePrice()
