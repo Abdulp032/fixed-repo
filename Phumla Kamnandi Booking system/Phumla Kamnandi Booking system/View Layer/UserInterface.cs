@@ -8,6 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Phumla_Kamnandi_Booking_system.Database_Layer;
+using Phumla_Kamnandi_Booking_system.Logic_Layer;
+
 
 namespace Phumla_Kamnandi_Booking_system.View_Layer
 {
@@ -22,58 +25,69 @@ namespace Phumla_Kamnandi_Booking_system.View_Layer
 
         private void UserInterface_Load(object sender, EventArgs e)
         {
-            listPanel.Add(panel1);
-            listPanel.Add(panel2);
-            listPanel.Add(panel3);
+            listPanel.Add(homePanel);
+            listPanel.Add(reservationPanel);
+            listPanel.Add(availableRoomsPanel);
+            listPanel.Add(newGuestOrOldGuestPanel);
             listPanel[index].BringToFront();
+            NextButton.Visible = false;
+            PreviousButton.Visible = false;
         }
 
         private void PreviousButton_Click(object sender, EventArgs e)
         {
+            NextButton.Visible = true;
             if (index > 0)
             {
                 listPanel[--index].BringToFront();
             }
-            
+
+            if (index < 1)
+            {
+                PreviousButton.Visible = false;
+                NextButton.Visible = false;
+            }
+
+            if (index == 3)
+            {
+                NextButton.Visible = false;
+            }
+
+
         }
 
         private void NextButton_Click(object sender, EventArgs e)
         {
+            
             if (index < listPanel.Count - 1)
             {
                 listPanel[++index].BringToFront();
             }
-            //MessageBox.Show(checkInDatePicker.Value.Date.ToString());
-            if (index == 1)
+            
+            if(index > 1)
             {
-                SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\abdul\\OneDrive\\Desktop\\infos project\\Phumla Kamnandi Booking system\\Phumla Kamnandi Booking system\\Database Layer\\Database.mdf\";Integrated Security=True");
-                con.Open();
-                SqlCommand cmd = new SqlCommand("SELECT RoomID as AvailableRooms FROM Rooms WHERE RoomID NOT IN(SELECT RoomID FROM Bookings WHERE CheckInDate >= @checkInDate AND CheckOutDate <= @checkOutDate)", con);
-                cmd.Parameters.AddWithValue("@checkInDate", checkInDatePicker.Value.Date);
-                cmd.Parameters.AddWithValue("@checkOutDate", checkOutDatePicker.Value.Date);
-                //cmd.ExecuteNonQuery();
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-                dataGridView1.DataSource = dt;
+                PreviousButton.Visible=true;
+            }
 
-                cmd = new SqlCommand("SELECT COUNT(RoomID) FROM Rooms WHERE RoomID NOT IN (    SELECT RoomID  FROM Bookings   WHERE CheckInDate >= @checkInDate AND CheckOutDate <= @checkOutDate);", con);
-                cmd.Parameters.AddWithValue("@checkInDate", checkInDatePicker.Value.Date);
-                cmd.Parameters.AddWithValue("@checkOutDate", checkOutDatePicker.Value.Date);
-                availableRoomsLabel.Text = "There are " + ((int)cmd.ExecuteScalar()).ToString() + " rooms available.";
-                con.Close();
-                NextButton.Text = "Continue";
+            if (index == 2)
+            {
+                dataGridView1.DataSource = DB.getAvailableRoomsTable(checkInDatePicker.Value.Date, checkOutDatePicker.Value.Date);
+            }
+
+            if(index == 3)
+            {
+                NextButton.Visible = false;
             }
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        private void makeReservationButton_Click(object sender, EventArgs e)
         {
-
+            reservationPanel.BringToFront();
+            index++;
+            NextButton.Visible = true;
+            PreviousButton.Visible = true;
         }
 
-        private void availableRoomsLabel_Click(object sender, EventArgs e)
-        {
 
-        }
     }
 }

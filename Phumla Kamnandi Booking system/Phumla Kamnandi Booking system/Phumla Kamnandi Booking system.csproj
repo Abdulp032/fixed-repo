@@ -68,7 +68,6 @@
     <Compile Include="Logic Layer\Booking.cs" />
     <Compile Include="Logic Layer\Guest.cs" />
     <Compile Include="Logic Layer\Hotel.cs" />
-    <Compile Include="Logic Layer\Main.cs" />
     <Compile Include="Logic Layer\Room.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

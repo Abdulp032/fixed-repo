@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Phumla_Kamnandi_Booking_system.Logic_Layer
 {
-    internal class Booking
+    public class Booking
     {
         #region fields/instance variables
 

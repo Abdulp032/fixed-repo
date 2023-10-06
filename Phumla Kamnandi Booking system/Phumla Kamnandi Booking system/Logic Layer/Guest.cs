@@ -7,11 +7,12 @@ using System.Threading.Tasks;
 
 namespace Phumla_Kamnandi_Booking_system.Logic_Layer
 {
-    internal class Guest
+    public class Guest
     {
         #region fields/instance variables
 
         private string guestID;
+        private string idNumber;
         private string name;
         private string surname;
         private string phoneNumber;
@@ -26,6 +27,12 @@ namespace Phumla_Kamnandi_Booking_system.Logic_Layer
         public string GuestID{
             get { return guestID; }
             set { guestID = value; }
+        }
+
+        public string IDNumber
+        {
+            get { return idNumber; }
+            set { idNumber = value; }
         }
 
         public string Name
@@ -63,9 +70,10 @@ namespace Phumla_Kamnandi_Booking_system.Logic_Layer
         
         #region constructor and methods
 
-        public Guest(string name, string surname, string phoneNumber, string email, string address)
+        public Guest(string idNumber, string name, string surname, string phoneNumber, string email, string address)
         {
             this.GuestID = generateUniqueID();
+            this.IDNumber = idNumber;
             this.name = name;
             this.surname = surname;
             this.phoneNumber = phoneNumber;
@@ -80,9 +88,10 @@ namespace Phumla_Kamnandi_Booking_system.Logic_Layer
 
         }
         
+        // add functionality
         public static string generateUniqueID()
         {
-            return "nothing yet";
+            return "150";
         }
 
         #endregion
