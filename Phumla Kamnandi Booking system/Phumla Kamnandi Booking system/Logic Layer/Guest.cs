@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Phumla_Kamnandi_Booking_system.Database_Layer;
 
 namespace Phumla_Kamnandi_Booking_system.Logic_Layer
 {
@@ -91,7 +92,8 @@ namespace Phumla_Kamnandi_Booking_system.Logic_Layer
         // add functionality
         public static string generateUniqueID()
         {
-            return "150";
+            int s = DB.getMaxGuestID();
+            return s.ToString();
         }
 
         #endregion

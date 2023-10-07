@@ -18,6 +18,7 @@ namespace Phumla_Kamnandi_Booking_system.View_Layer
     {
         List<Panel> listPanel = new List<Panel>();
         int index;
+        Guest guest;
         public UserInterface()
         {  
             InitializeComponent(); 
@@ -30,29 +31,34 @@ namespace Phumla_Kamnandi_Booking_system.View_Layer
             listPanel.Add(availableRoomsPanel);     // at index 2
             listPanel.Add(newGuestOrOldGuestPanel); // at index 3
             listPanel.Add(addGuestPanel);           // at index 4
-            listPanel.Add(placeholder);             // at index 5
+            listPanel.Add(creditCardPanel);         // at index 5
+            listPanel.Add(reservationCompletePanel);// at index 6
+            listPanel.Add(editReservationPanel); // at index 7
+            listPanel.Add(cancelBookingPanel);   // at index 8
             listPanel[index].BringToFront();
             NextButton.Visible = false;
             PreviousButton.Visible = false;
-
-            //DB.UpdateBooking("none", 4, "08/10/2012", "09/10/2023", 300);
+            
 
         }
 
         private void PreviousButton_Click(object sender, EventArgs e)
         {
             NextButton.Visible = true;
+            if (index == 7)
+            {
+                index = 0;
+                homePanel.BringToFront();
+            }
             if (index > 0)
             {
                 listPanel[--index].BringToFront();
             }
-
             if (index < 1)
             {
                 PreviousButton.Visible = false;
                 NextButton.Visible = false;
             }
-
             if (index == 3)
             {
                 NextButton.Visible = false;
@@ -61,8 +67,6 @@ namespace Phumla_Kamnandi_Booking_system.View_Layer
             {
                 confirmButton.Visible = false;
             }
-
-
         }
 
         private void NextButton_Click(object sender, EventArgs e)
@@ -72,17 +76,15 @@ namespace Phumla_Kamnandi_Booking_system.View_Layer
             {
                 listPanel[++index].BringToFront();
             }
-            
             if(index > 1)
             {
                 PreviousButton.Visible=true;
             }
-
             if (index == 2)
             {
                 dataGridView1.DataSource = DB.getAvailableRoomsTable(checkInDatePicker.Value.Date, checkOutDatePicker.Value.Date);
+                availableRoomsLabel.Text = "There are " + DB.getNumRoomsAvailable(checkInDatePicker.Value.Date, checkOutDatePicker.Value.Date).ToString() + " rooms available.";
             }
-
             if(index == 3)
             {
                 NextButton.Visible = false;
@@ -109,10 +111,72 @@ namespace Phumla_Kamnandi_Booking_system.View_Layer
 
         private void confirmButton_Click(object sender, EventArgs e)
         {
-           
-            Guest guest = new Guest(idNumTxtbx.Text,nameTxtBx.Text, surnameTxtBx.Text,phoneNumTxtBx.Text,emailTxtBx.Text,addressTxtBx.Text);
+            guest = new Guest(idNumTxtbx.Text,nameTxtBx.Text, surnameTxtBx.Text,phoneNumTxtBx.Text,emailTxtBx.Text,addressTxtBx.Text);
             DB.InsertGuest(guest);
+            confirmButton.Visible = false;
+            creditCardPanel.BringToFront();
+            index = 5;
+            MessageBox.Show("Guest account successfully created.");
+
             
+        }
+
+        private void creditCardEnterBtn_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Credit card payment verified.");
+            Booking booking = new Booking(guest.GuestID, 1, checkInDatePicker.Value.Date.ToString(), checkOutDatePicker.Value.Date.ToString());
+            DB.InsertBooking(booking);
+            referenceNoLabel.Text = booking.BookingID;
+            RoomNoLabel.Text = booking.RoomID.ToString();
+            priceLabel.Text = booking.Price.ToString();
+            reservationCompletePanel.BringToFront();
+            returnToHomeBtn.Visible = true;
+            index = 6;
+        }
+
+        private void returnToHomeBtn_Click(object sender, EventArgs e)
+        {
+            homePanel.BringToFront();
+            index = 0;
+            PreviousButton.Visible = false;
+        }
+
+        private void editReservationButton_Click_1(object sender, EventArgs e)
+        {
+            editReservationPanel.BringToFront();
+            index = 7;
+            PreviousButton.Visible = true;
+
+        }
+
+        private void secondReturnHomeButton_Click(object sender, EventArgs e)
+        {
+            homePanel.BringToFront();
+            index = 0;
+            PreviousButton.Visible = false;
+        }
+
+        private void cancelReservationButton_Click(object sender, EventArgs e)
+        {
+            
+            cancelBookingPanel.BringToFront();
+            index = 8;
+            cancelReturnToHomeBtn.Visible = true;
+
+        }
+
+        private void deleteBookingButton_Click(object sender, EventArgs e)
+        {
+            DB.DeleteBooking(cancelBookingIDTxtBx.Text);
+            MessageBox.Show("Booking successfully deleted.");
+        }
+
+        private void cancelReturnToHomeBtn_Click(object sender, EventArgs e)
+        {
+            PreviousButton.Visible=false;
+            homePanel.BringToFront();
+            index = 0;
+            cancelReturnToHomeBtn.Visible = false;
         }
     }
 }

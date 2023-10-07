@@ -109,7 +109,9 @@ namespace Phumla_Kamnandi_Booking_system.Database_Layer
             SqlCommand cmd = new SqlCommand("SELECT count(RoomID) FROM Rooms WHERE RoomID NOT IN ( SELECT RoomID FROM Bookings WHERE ( CheckInDate >= @checkInDate AND CheckInDate < @checkOutDate ) OR ( CheckOutDate > @checkInDate AND CheckOutDate <= @checkOutDate ) OR ( CheckInDate <= @checkInDate AND CheckOutDate >= @checkOutDate ) ); ", con);
             cmd.Parameters.AddWithValue("@checkInDate", checkInDate);
             cmd.Parameters.AddWithValue("@checkOutDate", checkOutDate);
-            return ((int)cmd.ExecuteScalar());
+            int s = ((int)cmd.ExecuteScalar());
+            con.Close();
+            return s;
         }
 
         // Inserts a guest record into the Guests table
@@ -199,6 +201,44 @@ namespace Phumla_Kamnandi_Booking_system.Database_Layer
 
             cmd.ExecuteNonQuery();
             con.Close();
+        }
+
+        public static int getMaxBookingID()
+        {
+            con.Open();
+            SqlCommand cmd = new SqlCommand("Select Max(BookingID) from Bookings", con);
+            object s = cmd.ExecuteScalar();
+            con.Close();
+            if (s != null && s != DBNull.Value)
+            {
+                int r = Convert.ToInt32(s);
+                
+                return r+1;
+            }
+            else
+            {
+                return 1;
+            }
+
+        }
+
+        public static int getMaxGuestID()
+        {
+            con.Open();
+            SqlCommand cmd = new SqlCommand("Select Max(GuestID) from Guests", con);
+            object s = cmd.ExecuteScalar();
+            con.Close();
+            if (s != null && s != DBNull.Value)
+            {
+                int r = Convert.ToInt32(s);
+                //MessageBox.Show(r++.ToString());
+                return r+1;
+            }
+            else
+            {
+                MessageBox.Show("its trying to return 1");
+                return 1;
+            }
         }
         #endregion
 

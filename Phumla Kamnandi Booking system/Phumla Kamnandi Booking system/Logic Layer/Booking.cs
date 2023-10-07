@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Phumla_Kamnandi_Booking_system.Database_Layer;
 
 namespace Phumla_Kamnandi_Booking_system.Logic_Layer
 {
@@ -58,7 +59,7 @@ namespace Phumla_Kamnandi_Booking_system.Logic_Layer
 
         public Booking(string guestID, int roomID, string checkInDate, string checkOutDate)
         {
-            this.BookingID = generateUniqueBookingID();
+            this.BookingID = generateUniqueBookingID().ToString();
             this.guestID = guestID;
             this.roomID = roomID;
             this.checkInDate = checkInDate;
@@ -72,9 +73,10 @@ namespace Phumla_Kamnandi_Booking_system.Logic_Layer
 
         }
 
-        public static string generateUniqueBookingID()
+        public static int generateUniqueBookingID()
         {
-            return "none";       // must still add implementation
+            int s = DB.getMaxBookingID();
+            return (int)s;
         }
 
         public float calculatePrice()

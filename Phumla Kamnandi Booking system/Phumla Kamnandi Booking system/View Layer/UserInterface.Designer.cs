@@ -47,6 +47,7 @@
             this.addNewGuestButton = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.addGuestPanel = new System.Windows.Forms.Panel();
+            this.label11 = new System.Windows.Forms.Label();
             this.addressTxtBx = new System.Windows.Forms.TextBox();
             this.emailTxtBx = new System.Windows.Forms.TextBox();
             this.phoneNumTxtBx = new System.Windows.Forms.TextBox();
@@ -59,6 +60,19 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.creditCardPanel = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.creditCardEnterBtn = new System.Windows.Forms.Button();
+            this.reservationCompletePanel = new System.Windows.Forms.Panel();
+            this.priceLabel = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.RoomNoLabel = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.referenceNoLabel = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.returnToHomeBtn = new System.Windows.Forms.Button();
             this.makeReservationButton = new System.Windows.Forms.Button();
             this.editReservationButton = new System.Windows.Forms.Button();
             this.cancelReservationButton = new System.Windows.Forms.Button();
@@ -66,16 +80,35 @@
             this.HomeLabel = new System.Windows.Forms.Label();
             this.homePanel = new System.Windows.Forms.Panel();
             this.confirmButton = new System.Windows.Forms.Button();
-            this.label11 = new System.Windows.Forms.Label();
-            this.placeholder = new System.Windows.Forms.Panel();
+            this.editReservationPanel = new System.Windows.Forms.Panel();
+            this.secondReturnHomeButton = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.label18 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.cancelBookingPanel = new System.Windows.Forms.Panel();
+            this.deleteBookingButton = new System.Windows.Forms.Button();
+            this.cancelBookingIDTxtBx = new System.Windows.Forms.TextBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.cancelReturnToHomeBtn = new System.Windows.Forms.Button();
             this.availableRoomsPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.reservationPanel.SuspendLayout();
             this.newGuestOrOldGuestPanel.SuspendLayout();
             this.addGuestPanel.SuspendLayout();
+            this.creditCardPanel.SuspendLayout();
+            this.reservationCompletePanel.SuspendLayout();
             this.homePanel.SuspendLayout();
-            this.placeholder.SuspendLayout();
+            this.editReservationPanel.SuspendLayout();
+            this.cancelBookingPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -176,9 +209,9 @@
             // 
             this.availableRoomsPanel.Controls.Add(this.dataGridView1);
             this.availableRoomsPanel.Controls.Add(this.availableRoomsLabel);
-            this.availableRoomsPanel.Location = new System.Drawing.Point(12, 12);
+            this.availableRoomsPanel.Location = new System.Drawing.Point(6, 12);
             this.availableRoomsPanel.Name = "availableRoomsPanel";
-            this.availableRoomsPanel.Size = new System.Drawing.Size(803, 452);
+            this.availableRoomsPanel.Size = new System.Drawing.Size(809, 452);
             this.availableRoomsPanel.TabIndex = 10;
             // 
             // dataGridView1
@@ -256,7 +289,6 @@
             // 
             // addGuestPanel
             // 
-            this.addGuestPanel.Controls.Add(this.placeholder);
             this.addGuestPanel.Controls.Add(this.label11);
             this.addGuestPanel.Controls.Add(this.addressTxtBx);
             this.addGuestPanel.Controls.Add(this.emailTxtBx);
@@ -274,6 +306,16 @@
             this.addGuestPanel.Name = "addGuestPanel";
             this.addGuestPanel.Size = new System.Drawing.Size(803, 452);
             this.addGuestPanel.TabIndex = 12;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(212, 5);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(389, 39);
+            this.label11.TabIndex = 13;
+            this.label11.Text = "Enter New Guest Details";
             // 
             // addressTxtBx
             // 
@@ -371,6 +413,135 @@
             this.label5.TabIndex = 1;
             this.label5.Text = "ID Number";
             // 
+            // creditCardPanel
+            // 
+            this.creditCardPanel.Controls.Add(this.textBox1);
+            this.creditCardPanel.Controls.Add(this.label12);
+            this.creditCardPanel.Controls.Add(this.creditCardEnterBtn);
+            this.creditCardPanel.Location = new System.Drawing.Point(9, 9);
+            this.creditCardPanel.Name = "creditCardPanel";
+            this.creditCardPanel.Size = new System.Drawing.Size(803, 452);
+            this.creditCardPanel.TabIndex = 13;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(282, 90);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(169, 22);
+            this.textBox1.TabIndex = 2;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(193, 6);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(395, 39);
+            this.label12.TabIndex = 1;
+            this.label12.Text = "Enter Credit Card Details";
+            // 
+            // creditCardEnterBtn
+            // 
+            this.creditCardEnterBtn.Location = new System.Drawing.Point(328, 159);
+            this.creditCardEnterBtn.Name = "creditCardEnterBtn";
+            this.creditCardEnterBtn.Size = new System.Drawing.Size(75, 23);
+            this.creditCardEnterBtn.TabIndex = 0;
+            this.creditCardEnterBtn.Text = "Enter";
+            this.creditCardEnterBtn.UseVisualStyleBackColor = true;
+            this.creditCardEnterBtn.Click += new System.EventHandler(this.creditCardEnterBtn_Click);
+            // 
+            // reservationCompletePanel
+            // 
+            this.reservationCompletePanel.Controls.Add(this.priceLabel);
+            this.reservationCompletePanel.Controls.Add(this.label16);
+            this.reservationCompletePanel.Controls.Add(this.RoomNoLabel);
+            this.reservationCompletePanel.Controls.Add(this.label15);
+            this.reservationCompletePanel.Controls.Add(this.referenceNoLabel);
+            this.reservationCompletePanel.Controls.Add(this.label14);
+            this.reservationCompletePanel.Controls.Add(this.label13);
+            this.reservationCompletePanel.Controls.Add(this.returnToHomeBtn);
+            this.reservationCompletePanel.Location = new System.Drawing.Point(6, 9);
+            this.reservationCompletePanel.Name = "reservationCompletePanel";
+            this.reservationCompletePanel.Size = new System.Drawing.Size(806, 455);
+            this.reservationCompletePanel.TabIndex = 14;
+            // 
+            // priceLabel
+            // 
+            this.priceLabel.AutoSize = true;
+            this.priceLabel.Location = new System.Drawing.Point(357, 313);
+            this.priceLabel.Name = "priceLabel";
+            this.priceLabel.Size = new System.Drawing.Size(51, 16);
+            this.priceLabel.TabIndex = 7;
+            this.priceLabel.Text = "label17";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(326, 265);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(111, 25);
+            this.label16.TabIndex = 6;
+            this.label16.Text = "Total Price:";
+            // 
+            // RoomNoLabel
+            // 
+            this.RoomNoLabel.AutoSize = true;
+            this.RoomNoLabel.Location = new System.Drawing.Point(357, 220);
+            this.RoomNoLabel.Name = "RoomNoLabel";
+            this.RoomNoLabel.Size = new System.Drawing.Size(51, 16);
+            this.RoomNoLabel.TabIndex = 5;
+            this.RoomNoLabel.Text = "label16";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(316, 172);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(143, 25);
+            this.label15.TabIndex = 4;
+            this.label15.Text = "Room Number:";
+            // 
+            // referenceNoLabel
+            // 
+            this.referenceNoLabel.AutoSize = true;
+            this.referenceNoLabel.Location = new System.Drawing.Point(357, 130);
+            this.referenceNoLabel.Name = "referenceNoLabel";
+            this.referenceNoLabel.Size = new System.Drawing.Size(51, 16);
+            this.referenceNoLabel.TabIndex = 3;
+            this.referenceNoLabel.Text = "label15";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(252, 88);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(289, 25);
+            this.label14.TabIndex = 2;
+            this.label14.Text = "Reservation Reference Number:";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(148, 11);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(512, 39);
+            this.label13.TabIndex = 1;
+            this.label13.Text = "Reservation Successfully Placed";
+            // 
+            // returnToHomeBtn
+            // 
+            this.returnToHomeBtn.Location = new System.Drawing.Point(331, 376);
+            this.returnToHomeBtn.Name = "returnToHomeBtn";
+            this.returnToHomeBtn.Size = new System.Drawing.Size(107, 61);
+            this.returnToHomeBtn.TabIndex = 0;
+            this.returnToHomeBtn.Text = "Return to Home";
+            this.returnToHomeBtn.UseVisualStyleBackColor = true;
+            this.returnToHomeBtn.Click += new System.EventHandler(this.returnToHomeBtn_Click);
+            // 
             // makeReservationButton
             // 
             this.makeReservationButton.Location = new System.Drawing.Point(174, 117);
@@ -389,6 +560,7 @@
             this.editReservationButton.TabIndex = 1;
             this.editReservationButton.Text = "Edit Reservation";
             this.editReservationButton.UseVisualStyleBackColor = true;
+            this.editReservationButton.Click += new System.EventHandler(this.editReservationButton_Click_1);
             // 
             // cancelReservationButton
             // 
@@ -398,6 +570,7 @@
             this.cancelReservationButton.TabIndex = 2;
             this.cancelReservationButton.Text = "Cancel Reservation";
             this.cancelReservationButton.UseVisualStyleBackColor = true;
+            this.cancelReservationButton.Click += new System.EventHandler(this.cancelReservationButton_Click);
             // 
             // makeEnquiryButton
             // 
@@ -441,32 +614,190 @@
             this.confirmButton.Visible = false;
             this.confirmButton.Click += new System.EventHandler(this.confirmButton_Click);
             // 
-            // label11
+            // editReservationPanel
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(212, 5);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(389, 39);
-            this.label11.TabIndex = 13;
-            this.label11.Text = "Enter New Guest Details";
+            this.editReservationPanel.Controls.Add(this.secondReturnHomeButton);
+            this.editReservationPanel.Controls.Add(this.button3);
+            this.editReservationPanel.Controls.Add(this.button2);
+            this.editReservationPanel.Controls.Add(this.dateTimePicker2);
+            this.editReservationPanel.Controls.Add(this.label20);
+            this.editReservationPanel.Controls.Add(this.label19);
+            this.editReservationPanel.Controls.Add(this.dateTimePicker1);
+            this.editReservationPanel.Controls.Add(this.label18);
+            this.editReservationPanel.Controls.Add(this.textBox3);
+            this.editReservationPanel.Controls.Add(this.textBox2);
+            this.editReservationPanel.Controls.Add(this.label17);
+            this.editReservationPanel.Controls.Add(this.button1);
+            this.editReservationPanel.Location = new System.Drawing.Point(6, 9);
+            this.editReservationPanel.Name = "editReservationPanel";
+            this.editReservationPanel.Size = new System.Drawing.Size(809, 471);
+            this.editReservationPanel.TabIndex = 15;
             // 
-            // placeholder
+            // secondReturnHomeButton
             // 
-            this.placeholder.Controls.Add(this.button1);
-            this.placeholder.Location = new System.Drawing.Point(0, 0);
-            this.placeholder.Name = "placeholder";
-            this.placeholder.Size = new System.Drawing.Size(803, 452);
-            this.placeholder.TabIndex = 13;
+            this.secondReturnHomeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.secondReturnHomeButton.Location = new System.Drawing.Point(300, 393);
+            this.secondReturnHomeButton.Name = "secondReturnHomeButton";
+            this.secondReturnHomeButton.Size = new System.Drawing.Size(180, 56);
+            this.secondReturnHomeButton.TabIndex = 13;
+            this.secondReturnHomeButton.Text = "Return To Home";
+            this.secondReturnHomeButton.UseVisualStyleBackColor = true;
+            this.secondReturnHomeButton.Click += new System.EventHandler(this.secondReturnHomeButton_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(676, 308);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(99, 26);
+            this.button3.TabIndex = 12;
+            this.button3.Text = "Save change";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(676, 231);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(99, 26);
+            this.button2.TabIndex = 11;
+            this.button2.Text = "Save change";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Location = new System.Drawing.Point(339, 311);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(242, 22);
+            this.dateTimePicker2.TabIndex = 10;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(101, 313);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(193, 20);
+            this.label20.TabIndex = 9;
+            this.label20.Text = "Change Check-out Date:";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(101, 233);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(183, 20);
+            this.label19.TabIndex = 8;
+            this.label19.Text = "Change Check-in Date:";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(339, 231);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(242, 22);
+            this.dateTimePicker1.TabIndex = 7;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(101, 155);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(142, 20);
+            this.label18.TabIndex = 4;
+            this.label18.Text = "Change Room ID:";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(339, 155);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(115, 22);
+            this.textBox3.TabIndex = 3;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(308, 74);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(171, 22);
+            this.textBox2.TabIndex = 2;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(316, 29);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(164, 25);
+            this.label17.TabIndex = 1;
+            this.label17.Text = "Enter Booking ID:";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(351, 16);
+            this.button1.Location = new System.Drawing.Point(676, 153);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(99, 26);
             this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
+            this.button1.Text = "Save change";
             this.button1.UseVisualStyleBackColor = true;
+            // 
+            // cancelBookingPanel
+            // 
+            this.cancelBookingPanel.Controls.Add(this.cancelReturnToHomeBtn);
+            this.cancelBookingPanel.Controls.Add(this.label22);
+            this.cancelBookingPanel.Controls.Add(this.cancelBookingIDTxtBx);
+            this.cancelBookingPanel.Controls.Add(this.label21);
+            this.cancelBookingPanel.Controls.Add(this.deleteBookingButton);
+            this.cancelBookingPanel.Location = new System.Drawing.Point(6, 9);
+            this.cancelBookingPanel.Name = "cancelBookingPanel";
+            this.cancelBookingPanel.Size = new System.Drawing.Size(809, 471);
+            this.cancelBookingPanel.TabIndex = 16;
+            // 
+            // deleteBookingButton
+            // 
+            this.deleteBookingButton.Location = new System.Drawing.Point(331, 255);
+            this.deleteBookingButton.Name = "deleteBookingButton";
+            this.deleteBookingButton.Size = new System.Drawing.Size(119, 46);
+            this.deleteBookingButton.TabIndex = 0;
+            this.deleteBookingButton.Text = "Delete Booking";
+            this.deleteBookingButton.UseVisualStyleBackColor = true;
+            this.deleteBookingButton.Click += new System.EventHandler(this.deleteBookingButton_Click);
+            // 
+            // cancelBookingIDTxtBx
+            // 
+            this.cancelBookingIDTxtBx.Location = new System.Drawing.Point(311, 178);
+            this.cancelBookingIDTxtBx.Name = "cancelBookingIDTxtBx";
+            this.cancelBookingIDTxtBx.Size = new System.Drawing.Size(171, 22);
+            this.cancelBookingIDTxtBx.TabIndex = 4;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(316, 133);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(164, 25);
+            this.label21.TabIndex = 3;
+            this.label21.Text = "Enter Booking ID:";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(275, 15);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(266, 39);
+            this.label22.TabIndex = 5;
+            this.label22.Text = "Cancel Booking:";
+            // 
+            // cancelReturnToHomeBtn
+            // 
+            this.cancelReturnToHomeBtn.Location = new System.Drawing.Point(319, 404);
+            this.cancelReturnToHomeBtn.Name = "cancelReturnToHomeBtn";
+            this.cancelReturnToHomeBtn.Size = new System.Drawing.Size(160, 62);
+            this.cancelReturnToHomeBtn.TabIndex = 6;
+            this.cancelReturnToHomeBtn.Text = "Return to Home";
+            this.cancelReturnToHomeBtn.UseVisualStyleBackColor = true;
+            this.cancelReturnToHomeBtn.Visible = false;
+            this.cancelReturnToHomeBtn.Click += new System.EventHandler(this.cancelReturnToHomeBtn_Click);
             // 
             // UserInterface
             // 
@@ -476,6 +807,10 @@
             this.Controls.Add(this.NextButton);
             this.Controls.Add(this.PreviousButton);
             this.Controls.Add(this.confirmButton);
+            this.Controls.Add(this.cancelBookingPanel);
+            this.Controls.Add(this.editReservationPanel);
+            this.Controls.Add(this.reservationCompletePanel);
+            this.Controls.Add(this.creditCardPanel);
             this.Controls.Add(this.addGuestPanel);
             this.Controls.Add(this.availableRoomsPanel);
             this.Controls.Add(this.reservationPanel);
@@ -493,9 +828,16 @@
             this.newGuestOrOldGuestPanel.PerformLayout();
             this.addGuestPanel.ResumeLayout(false);
             this.addGuestPanel.PerformLayout();
+            this.creditCardPanel.ResumeLayout(false);
+            this.creditCardPanel.PerformLayout();
+            this.reservationCompletePanel.ResumeLayout(false);
+            this.reservationCompletePanel.PerformLayout();
             this.homePanel.ResumeLayout(false);
             this.homePanel.PerformLayout();
-            this.placeholder.ResumeLayout(false);
+            this.editReservationPanel.ResumeLayout(false);
+            this.editReservationPanel.PerformLayout();
+            this.cancelBookingPanel.ResumeLayout(false);
+            this.cancelBookingPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -541,7 +883,37 @@
         private System.Windows.Forms.TextBox nameTxtBx;
         private System.Windows.Forms.TextBox idNumTxtbx;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Panel placeholder;
+        private System.Windows.Forms.Panel creditCardPanel;
+        private System.Windows.Forms.Button creditCardEnterBtn;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Panel reservationCompletePanel;
+        private System.Windows.Forms.Button returnToHomeBtn;
+        private System.Windows.Forms.Label referenceNoLabel;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label priceLabel;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label RoomNoLabel;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Panel editReservationPanel;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Button secondReturnHomeButton;
+        private System.Windows.Forms.Panel cancelBookingPanel;
+        private System.Windows.Forms.Button deleteBookingButton;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.TextBox cancelBookingIDTxtBx;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Button cancelReturnToHomeBtn;
     }
 }
