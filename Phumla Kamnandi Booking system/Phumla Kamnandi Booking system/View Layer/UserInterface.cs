@@ -36,6 +36,7 @@ namespace Phumla_Kamnandi_Booking_system.View_Layer
             listPanel.Add(reservationCompletePanel);// at index 6
             listPanel.Add(editReservationPanel); // at index 7
             listPanel.Add(cancelBookingPanel);   // at index 8
+            listPanel.Add(existingGuestPanel);   // at index 9
             listPanel[index].BringToFront();
             NextButton.Visible = false;
             PreviousButton.Visible = false;
@@ -44,7 +45,15 @@ namespace Phumla_Kamnandi_Booking_system.View_Layer
 
         private void PreviousButton_Click(object sender, EventArgs e)
         {
+            confirmButton.Visible = false;
             NextButton.Visible = true;
+            if(index == 9)
+            {
+                index = 3;
+                newGuestOrOldGuestPanel.BringToFront();
+                NextButton.Visible=false;
+                return;
+            }
             if (index == 7)
             {
                 index = 0;
@@ -63,6 +72,10 @@ namespace Phumla_Kamnandi_Booking_system.View_Layer
             {
                 NextButton.Visible = false;
             }
+            if(index == 4)
+            {
+                confirmButton.Visible = false;
+            }
             if (index!= 4)
             {
                 confirmButton.Visible = false;
@@ -72,6 +85,23 @@ namespace Phumla_Kamnandi_Booking_system.View_Layer
         private void NextButton_Click(object sender, EventArgs e)
         {
             
+            if (index == 9)
+            {
+                if (DB.CheckIDNumberInSystem((existingGuestIDNumberTxtBx.Text)))
+                {
+                    MessageBox.Show("Guest has been found in system, proceed with booking.");
+                    guest = new Guest();
+                    guest.GuestID = existingGuestIDNumberTxtBx.Text;
+                    creditCardPanel.BringToFront();
+                    fakePreviousButton.Visible = false;
+                    NextButton.Visible=false;
+                    PreviousButton.Visible = true;
+                    index = 5;
+                    return;
+                }
+                MessageBox.Show("Guest does not exist in system, try again.");
+                return;
+            }
             if (index < listPanel.Count - 1)
             {
                 listPanel[++index].BringToFront();
@@ -144,6 +174,7 @@ namespace Phumla_Kamnandi_Booking_system.View_Layer
             homePanel.BringToFront();
             index = 0;
             PreviousButton.Visible = false;
+            NextButton.Visible = false;
         }
 
         private void editReservationButton_Click_1(object sender, EventArgs e)
@@ -159,6 +190,7 @@ namespace Phumla_Kamnandi_Booking_system.View_Layer
             homePanel.BringToFront();
             index = 0;
             PreviousButton.Visible = false;
+            NextButton.Visible = false;
         }
 
         private void cancelReservationButton_Click(object sender, EventArgs e)
@@ -182,11 +214,44 @@ namespace Phumla_Kamnandi_Booking_system.View_Layer
             homePanel.BringToFront();
             index = 0;
             cancelReturnToHomeBtn.Visible = false;
+            NextButton.Visible = false;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void saveNewRoomIDButton_Click(object sender, EventArgs e)
         {
             string bookingID = changeBookingTextBox.Text;
+            string roomID = newRoomIDTextBox.Text;
+            DB.UpdateBookingRoomID(bookingID, roomID);
+        }
+
+        private void saveNewCheckInDate_Click(object sender, EventArgs e)
+        {
+            string bookingID = changeBookingTextBox.Text;
+            string newCheckInDate = newCheckInDatePicker.Value.Date.ToString();
+            DB.UpdateBookingCheckInDate(bookingID, newCheckInDate);
+        }
+
+        private void saveNewCheckOutDate_Click(object sender, EventArgs e)
+        {
+            string bookingID = changeBookingTextBox.Text;
+            string newCheckOutDate = newCheckOutDatePicker.Value.Date.ToString();
+            DB.UpdateBookingCheckOutDate(bookingID, newCheckOutDate);
+        }
+
+        private void existingGuestBtn_Click(object sender, EventArgs e)
+        {
+            existingGuestPanel.BringToFront();
+            NextButton.Visible = true;
+            fakePreviousButton.Visible = true;
+            index = 9;
+        }
+
+        private void fakePreviousButton_Click(object sender, EventArgs e)
+        {
+            newGuestOrOldGuestPanel.BringToFront();
+            NextButton.Visible = false;
+            fakePreviousButton.Visible = false;
+            index = 3;
         }
     }
 }

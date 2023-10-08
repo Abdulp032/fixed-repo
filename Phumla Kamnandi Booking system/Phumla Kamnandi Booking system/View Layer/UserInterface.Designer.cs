@@ -99,6 +99,12 @@
             this.cancelBookingIDTxtBx = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.deleteBookingButton = new System.Windows.Forms.Button();
+            this.label23 = new System.Windows.Forms.Label();
+            this.existingGuestPanel = new System.Windows.Forms.Panel();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.existingGuestIDNumberTxtBx = new System.Windows.Forms.TextBox();
+            this.fakePreviousButton = new System.Windows.Forms.Button();
             this.availableRoomsPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.reservationPanel.SuspendLayout();
@@ -109,25 +115,25 @@
             this.homePanel.SuspendLayout();
             this.editReservationPanel.SuspendLayout();
             this.cancelBookingPanel.SuspendLayout();
+            this.existingGuestPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(236, 11);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(315, 14);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(120, 13);
+            this.label1.Size = new System.Drawing.Size(151, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Enter reservation details";
             // 
             // singleRadioButton
             // 
             this.singleRadioButton.AutoSize = true;
-            this.singleRadioButton.Location = new System.Drawing.Point(32, 52);
-            this.singleRadioButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.singleRadioButton.Location = new System.Drawing.Point(43, 64);
+            this.singleRadioButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.singleRadioButton.Name = "singleRadioButton";
-            this.singleRadioButton.Size = new System.Drawing.Size(98, 17);
+            this.singleRadioButton.Size = new System.Drawing.Size(124, 20);
             this.singleRadioButton.TabIndex = 1;
             this.singleRadioButton.TabStop = true;
             this.singleRadioButton.Text = "Single bedroom";
@@ -136,10 +142,10 @@
             // doubleRadioButton
             // 
             this.doubleRadioButton.AutoSize = true;
-            this.doubleRadioButton.Location = new System.Drawing.Point(246, 52);
-            this.doubleRadioButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.doubleRadioButton.Location = new System.Drawing.Point(328, 64);
+            this.doubleRadioButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.doubleRadioButton.Name = "doubleRadioButton";
-            this.doubleRadioButton.Size = new System.Drawing.Size(103, 17);
+            this.doubleRadioButton.Size = new System.Drawing.Size(130, 20);
             this.doubleRadioButton.TabIndex = 2;
             this.doubleRadioButton.TabStop = true;
             this.doubleRadioButton.Text = "Double bedroom";
@@ -148,10 +154,10 @@
             // tripleRadioButton
             // 
             this.tripleRadioButton.AutoSize = true;
-            this.tripleRadioButton.Location = new System.Drawing.Point(460, 52);
-            this.tripleRadioButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tripleRadioButton.Location = new System.Drawing.Point(613, 64);
+            this.tripleRadioButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tripleRadioButton.Name = "tripleRadioButton";
-            this.tripleRadioButton.Size = new System.Drawing.Size(96, 17);
+            this.tripleRadioButton.Size = new System.Drawing.Size(122, 20);
             this.tripleRadioButton.TabIndex = 3;
             this.tripleRadioButton.TabStop = true;
             this.tripleRadioButton.Text = "Triple Bedroom";
@@ -160,45 +166,43 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(244, 114);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(325, 140);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(73, 13);
+            this.label2.Size = new System.Drawing.Size(89, 16);
             this.label2.TabIndex = 4;
             this.label2.Text = "Check-in date";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(238, 236);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(317, 290);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(80, 13);
+            this.label3.Size = new System.Drawing.Size(97, 16);
             this.label3.TabIndex = 5;
             this.label3.Text = "Check-out date";
             // 
             // checkInDatePicker
             // 
-            this.checkInDatePicker.Location = new System.Drawing.Point(195, 163);
-            this.checkInDatePicker.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.checkInDatePicker.Location = new System.Drawing.Point(260, 201);
+            this.checkInDatePicker.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkInDatePicker.Name = "checkInDatePicker";
-            this.checkInDatePicker.Size = new System.Drawing.Size(182, 20);
+            this.checkInDatePicker.Size = new System.Drawing.Size(241, 22);
             this.checkInDatePicker.TabIndex = 6;
             // 
             // checkOutDatePicker
             // 
-            this.checkOutDatePicker.Location = new System.Drawing.Point(195, 280);
-            this.checkOutDatePicker.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.checkOutDatePicker.Location = new System.Drawing.Point(260, 345);
+            this.checkOutDatePicker.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkOutDatePicker.Name = "checkOutDatePicker";
-            this.checkOutDatePicker.Size = new System.Drawing.Size(180, 20);
+            this.checkOutDatePicker.Size = new System.Drawing.Size(239, 22);
             this.checkOutDatePicker.TabIndex = 7;
             // 
             // PreviousButton
             // 
-            this.PreviousButton.Location = new System.Drawing.Point(110, 395);
-            this.PreviousButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.PreviousButton.Location = new System.Drawing.Point(147, 486);
+            this.PreviousButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PreviousButton.Name = "PreviousButton";
-            this.PreviousButton.Size = new System.Drawing.Size(66, 27);
+            this.PreviousButton.Size = new System.Drawing.Size(88, 33);
             this.PreviousButton.TabIndex = 8;
             this.PreviousButton.Text = "Previous";
             this.PreviousButton.UseVisualStyleBackColor = true;
@@ -206,10 +210,10 @@
             // 
             // NextButton
             // 
-            this.NextButton.Location = new System.Drawing.Point(434, 395);
-            this.NextButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.NextButton.Location = new System.Drawing.Point(579, 486);
+            this.NextButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.NextButton.Name = "NextButton";
-            this.NextButton.Size = new System.Drawing.Size(86, 27);
+            this.NextButton.Size = new System.Drawing.Size(115, 33);
             this.NextButton.TabIndex = 9;
             this.NextButton.Text = "Next";
             this.NextButton.UseVisualStyleBackColor = true;
@@ -219,30 +223,29 @@
             // 
             this.availableRoomsPanel.Controls.Add(this.dataGridView1);
             this.availableRoomsPanel.Controls.Add(this.availableRoomsLabel);
-            this.availableRoomsPanel.Location = new System.Drawing.Point(4, 10);
-            this.availableRoomsPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.availableRoomsPanel.Location = new System.Drawing.Point(5, 12);
+            this.availableRoomsPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.availableRoomsPanel.Name = "availableRoomsPanel";
-            this.availableRoomsPanel.Size = new System.Drawing.Size(607, 367);
+            this.availableRoomsPanel.Size = new System.Drawing.Size(809, 452);
             this.availableRoomsPanel.TabIndex = 10;
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(212, 58);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Location = new System.Drawing.Point(283, 71);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(151, 214);
+            this.dataGridView1.Size = new System.Drawing.Size(201, 263);
             this.dataGridView1.TabIndex = 10;
             // 
             // availableRoomsLabel
             // 
             this.availableRoomsLabel.AutoSize = true;
-            this.availableRoomsLabel.Location = new System.Drawing.Point(221, 19);
-            this.availableRoomsLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.availableRoomsLabel.Location = new System.Drawing.Point(295, 23);
             this.availableRoomsLabel.Name = "availableRoomsLabel";
-            this.availableRoomsLabel.Size = new System.Drawing.Size(139, 13);
+            this.availableRoomsLabel.Size = new System.Drawing.Size(177, 16);
             this.availableRoomsLabel.TabIndex = 9;
             this.availableRoomsLabel.Text = "There are X rooms available";
             // 
@@ -256,10 +259,10 @@
             this.reservationPanel.Controls.Add(this.doubleRadioButton);
             this.reservationPanel.Controls.Add(this.singleRadioButton);
             this.reservationPanel.Controls.Add(this.label1);
-            this.reservationPanel.Location = new System.Drawing.Point(9, 10);
-            this.reservationPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.reservationPanel.Location = new System.Drawing.Point(12, 12);
+            this.reservationPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.reservationPanel.Name = "reservationPanel";
-            this.reservationPanel.Size = new System.Drawing.Size(602, 367);
+            this.reservationPanel.Size = new System.Drawing.Size(803, 452);
             this.reservationPanel.TabIndex = 8;
             // 
             // newGuestOrOldGuestPanel
@@ -267,28 +270,29 @@
             this.newGuestOrOldGuestPanel.Controls.Add(this.existingGuestBtn);
             this.newGuestOrOldGuestPanel.Controls.Add(this.addNewGuestButton);
             this.newGuestOrOldGuestPanel.Controls.Add(this.label4);
-            this.newGuestOrOldGuestPanel.Location = new System.Drawing.Point(9, 10);
-            this.newGuestOrOldGuestPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.newGuestOrOldGuestPanel.Location = new System.Drawing.Point(12, 12);
+            this.newGuestOrOldGuestPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.newGuestOrOldGuestPanel.Name = "newGuestOrOldGuestPanel";
-            this.newGuestOrOldGuestPanel.Size = new System.Drawing.Size(602, 367);
+            this.newGuestOrOldGuestPanel.Size = new System.Drawing.Size(803, 452);
             this.newGuestOrOldGuestPanel.TabIndex = 11;
             // 
             // existingGuestBtn
             // 
-            this.existingGuestBtn.Location = new System.Drawing.Point(355, 138);
-            this.existingGuestBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.existingGuestBtn.Location = new System.Drawing.Point(473, 170);
+            this.existingGuestBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.existingGuestBtn.Name = "existingGuestBtn";
-            this.existingGuestBtn.Size = new System.Drawing.Size(128, 60);
+            this.existingGuestBtn.Size = new System.Drawing.Size(171, 74);
             this.existingGuestBtn.TabIndex = 2;
             this.existingGuestBtn.Text = "Existing Guest";
             this.existingGuestBtn.UseVisualStyleBackColor = true;
+            this.existingGuestBtn.Click += new System.EventHandler(this.existingGuestBtn_Click);
             // 
             // addNewGuestButton
             // 
-            this.addNewGuestButton.Location = new System.Drawing.Point(111, 136);
-            this.addNewGuestButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addNewGuestButton.Location = new System.Drawing.Point(148, 167);
+            this.addNewGuestButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.addNewGuestButton.Name = "addNewGuestButton";
-            this.addNewGuestButton.Size = new System.Drawing.Size(129, 63);
+            this.addNewGuestButton.Size = new System.Drawing.Size(172, 78);
             this.addNewGuestButton.TabIndex = 1;
             this.addNewGuestButton.Text = "Add New Guest";
             this.addNewGuestButton.UseVisualStyleBackColor = true;
@@ -298,10 +302,9 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(120, 37);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(160, 46);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(385, 31);
+            this.label4.Size = new System.Drawing.Size(480, 39);
             this.label4.TabIndex = 0;
             this.label4.Text = "Returning Guest or New Guest";
             // 
@@ -320,128 +323,121 @@
             this.addGuestPanel.Controls.Add(this.label7);
             this.addGuestPanel.Controls.Add(this.label6);
             this.addGuestPanel.Controls.Add(this.label5);
-            this.addGuestPanel.Location = new System.Drawing.Point(9, 10);
-            this.addGuestPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addGuestPanel.Location = new System.Drawing.Point(12, 12);
+            this.addGuestPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.addGuestPanel.Name = "addGuestPanel";
-            this.addGuestPanel.Size = new System.Drawing.Size(602, 367);
+            this.addGuestPanel.Size = new System.Drawing.Size(803, 452);
             this.addGuestPanel.TabIndex = 12;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(159, 4);
-            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label11.Location = new System.Drawing.Point(212, 5);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(312, 31);
+            this.label11.Size = new System.Drawing.Size(389, 39);
             this.label11.TabIndex = 13;
             this.label11.Text = "Enter New Guest Details";
             // 
             // addressTxtBx
             // 
-            this.addressTxtBx.Location = new System.Drawing.Point(150, 295);
-            this.addressTxtBx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addressTxtBx.Location = new System.Drawing.Point(200, 363);
+            this.addressTxtBx.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.addressTxtBx.Name = "addressTxtBx";
-            this.addressTxtBx.Size = new System.Drawing.Size(121, 20);
+            this.addressTxtBx.Size = new System.Drawing.Size(160, 22);
             this.addressTxtBx.TabIndex = 12;
             // 
             // emailTxtBx
             // 
-            this.emailTxtBx.Location = new System.Drawing.Point(150, 247);
-            this.emailTxtBx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.emailTxtBx.Location = new System.Drawing.Point(200, 304);
+            this.emailTxtBx.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.emailTxtBx.Name = "emailTxtBx";
-            this.emailTxtBx.Size = new System.Drawing.Size(121, 20);
+            this.emailTxtBx.Size = new System.Drawing.Size(160, 22);
             this.emailTxtBx.TabIndex = 11;
             // 
             // phoneNumTxtBx
             // 
-            this.phoneNumTxtBx.Location = new System.Drawing.Point(150, 196);
-            this.phoneNumTxtBx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.phoneNumTxtBx.Location = new System.Drawing.Point(200, 241);
+            this.phoneNumTxtBx.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.phoneNumTxtBx.Name = "phoneNumTxtBx";
-            this.phoneNumTxtBx.Size = new System.Drawing.Size(121, 20);
+            this.phoneNumTxtBx.Size = new System.Drawing.Size(160, 22);
             this.phoneNumTxtBx.TabIndex = 10;
             // 
             // surnameTxtBx
             // 
-            this.surnameTxtBx.Location = new System.Drawing.Point(150, 149);
-            this.surnameTxtBx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.surnameTxtBx.Location = new System.Drawing.Point(200, 183);
+            this.surnameTxtBx.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.surnameTxtBx.Name = "surnameTxtBx";
-            this.surnameTxtBx.Size = new System.Drawing.Size(121, 20);
+            this.surnameTxtBx.Size = new System.Drawing.Size(160, 22);
             this.surnameTxtBx.TabIndex = 9;
             // 
             // nameTxtBx
             // 
-            this.nameTxtBx.Location = new System.Drawing.Point(150, 106);
-            this.nameTxtBx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nameTxtBx.Location = new System.Drawing.Point(200, 130);
+            this.nameTxtBx.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.nameTxtBx.Name = "nameTxtBx";
-            this.nameTxtBx.Size = new System.Drawing.Size(121, 20);
+            this.nameTxtBx.Size = new System.Drawing.Size(160, 22);
             this.nameTxtBx.TabIndex = 8;
             // 
             // idNumTxtbx
             // 
-            this.idNumTxtbx.Location = new System.Drawing.Point(150, 59);
-            this.idNumTxtbx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.idNumTxtbx.Location = new System.Drawing.Point(200, 73);
+            this.idNumTxtbx.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.idNumTxtbx.Name = "idNumTxtbx";
-            this.idNumTxtbx.Size = new System.Drawing.Size(121, 20);
+            this.idNumTxtbx.Size = new System.Drawing.Size(160, 22);
             this.idNumTxtbx.TabIndex = 7;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(56, 298);
-            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label10.Location = new System.Drawing.Point(75, 367);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(45, 13);
+            this.label10.Size = new System.Drawing.Size(58, 16);
             this.label10.TabIndex = 6;
             this.label10.Text = "Address";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(56, 249);
-            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Location = new System.Drawing.Point(75, 306);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(32, 13);
+            this.label9.Size = new System.Drawing.Size(41, 16);
             this.label9.TabIndex = 5;
             this.label9.Text = "Email";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(56, 198);
-            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label8.Location = new System.Drawing.Point(75, 244);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(78, 13);
+            this.label8.Size = new System.Drawing.Size(97, 16);
             this.label8.TabIndex = 4;
             this.label8.Text = "Phone Number";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(56, 151);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Location = new System.Drawing.Point(75, 186);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(49, 13);
+            this.label7.Size = new System.Drawing.Size(61, 16);
             this.label7.TabIndex = 3;
             this.label7.Text = "Surname";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(56, 108);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Location = new System.Drawing.Point(75, 133);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(35, 13);
+            this.label6.Size = new System.Drawing.Size(44, 16);
             this.label6.TabIndex = 2;
             this.label6.Text = "Name";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(56, 62);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Location = new System.Drawing.Point(75, 76);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(58, 13);
+            this.label5.Size = new System.Drawing.Size(71, 16);
             this.label5.TabIndex = 1;
             this.label5.Text = "ID Number";
             // 
@@ -450,37 +446,36 @@
             this.creditCardPanel.Controls.Add(this.textBox1);
             this.creditCardPanel.Controls.Add(this.label12);
             this.creditCardPanel.Controls.Add(this.creditCardEnterBtn);
-            this.creditCardPanel.Location = new System.Drawing.Point(7, 7);
-            this.creditCardPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.creditCardPanel.Location = new System.Drawing.Point(9, 9);
+            this.creditCardPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.creditCardPanel.Name = "creditCardPanel";
-            this.creditCardPanel.Size = new System.Drawing.Size(602, 367);
+            this.creditCardPanel.Size = new System.Drawing.Size(803, 452);
             this.creditCardPanel.TabIndex = 13;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(212, 73);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox1.Location = new System.Drawing.Point(283, 90);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(128, 20);
+            this.textBox1.Size = new System.Drawing.Size(169, 22);
             this.textBox1.TabIndex = 2;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(145, 5);
-            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label12.Location = new System.Drawing.Point(193, 6);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(316, 31);
+            this.label12.Size = new System.Drawing.Size(395, 39);
             this.label12.TabIndex = 1;
             this.label12.Text = "Enter Credit Card Details";
             // 
             // creditCardEnterBtn
             // 
-            this.creditCardEnterBtn.Location = new System.Drawing.Point(246, 129);
-            this.creditCardEnterBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.creditCardEnterBtn.Location = new System.Drawing.Point(328, 159);
+            this.creditCardEnterBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.creditCardEnterBtn.Name = "creditCardEnterBtn";
-            this.creditCardEnterBtn.Size = new System.Drawing.Size(56, 19);
+            this.creditCardEnterBtn.Size = new System.Drawing.Size(75, 23);
             this.creditCardEnterBtn.TabIndex = 0;
             this.creditCardEnterBtn.Text = "Enter";
             this.creditCardEnterBtn.UseVisualStyleBackColor = true;
@@ -496,19 +491,18 @@
             this.reservationCompletePanel.Controls.Add(this.label14);
             this.reservationCompletePanel.Controls.Add(this.label13);
             this.reservationCompletePanel.Controls.Add(this.returnToHomeBtn);
-            this.reservationCompletePanel.Location = new System.Drawing.Point(4, 7);
-            this.reservationCompletePanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.reservationCompletePanel.Location = new System.Drawing.Point(5, 9);
+            this.reservationCompletePanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.reservationCompletePanel.Name = "reservationCompletePanel";
-            this.reservationCompletePanel.Size = new System.Drawing.Size(604, 370);
+            this.reservationCompletePanel.Size = new System.Drawing.Size(805, 455);
             this.reservationCompletePanel.TabIndex = 14;
             // 
             // priceLabel
             // 
             this.priceLabel.AutoSize = true;
-            this.priceLabel.Location = new System.Drawing.Point(268, 254);
-            this.priceLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.priceLabel.Location = new System.Drawing.Point(357, 313);
             this.priceLabel.Name = "priceLabel";
-            this.priceLabel.Size = new System.Drawing.Size(41, 13);
+            this.priceLabel.Size = new System.Drawing.Size(51, 16);
             this.priceLabel.TabIndex = 7;
             this.priceLabel.Text = "label17";
             // 
@@ -516,20 +510,18 @@
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(244, 215);
-            this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label16.Location = new System.Drawing.Point(325, 265);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(87, 20);
+            this.label16.Size = new System.Drawing.Size(111, 25);
             this.label16.TabIndex = 6;
             this.label16.Text = "Total Price:";
             // 
             // RoomNoLabel
             // 
             this.RoomNoLabel.AutoSize = true;
-            this.RoomNoLabel.Location = new System.Drawing.Point(268, 179);
-            this.RoomNoLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.RoomNoLabel.Location = new System.Drawing.Point(357, 220);
             this.RoomNoLabel.Name = "RoomNoLabel";
-            this.RoomNoLabel.Size = new System.Drawing.Size(41, 13);
+            this.RoomNoLabel.Size = new System.Drawing.Size(51, 16);
             this.RoomNoLabel.TabIndex = 5;
             this.RoomNoLabel.Text = "label16";
             // 
@@ -537,20 +529,18 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(237, 140);
-            this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label15.Location = new System.Drawing.Point(316, 172);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(116, 20);
+            this.label15.Size = new System.Drawing.Size(143, 25);
             this.label15.TabIndex = 4;
             this.label15.Text = "Room Number:";
             // 
             // referenceNoLabel
             // 
             this.referenceNoLabel.AutoSize = true;
-            this.referenceNoLabel.Location = new System.Drawing.Point(268, 106);
-            this.referenceNoLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.referenceNoLabel.Location = new System.Drawing.Point(357, 130);
             this.referenceNoLabel.Name = "referenceNoLabel";
-            this.referenceNoLabel.Size = new System.Drawing.Size(41, 13);
+            this.referenceNoLabel.Size = new System.Drawing.Size(51, 16);
             this.referenceNoLabel.TabIndex = 3;
             this.referenceNoLabel.Text = "label15";
             // 
@@ -558,10 +548,9 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(189, 72);
-            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label14.Location = new System.Drawing.Point(252, 89);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(237, 20);
+            this.label14.Size = new System.Drawing.Size(289, 25);
             this.label14.TabIndex = 2;
             this.label14.Text = "Reservation Reference Number:";
             // 
@@ -569,19 +558,18 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(111, 9);
-            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label13.Location = new System.Drawing.Point(148, 11);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(410, 31);
+            this.label13.Size = new System.Drawing.Size(512, 39);
             this.label13.TabIndex = 1;
             this.label13.Text = "Reservation Successfully Placed";
             // 
             // returnToHomeBtn
             // 
-            this.returnToHomeBtn.Location = new System.Drawing.Point(248, 306);
-            this.returnToHomeBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.returnToHomeBtn.Location = new System.Drawing.Point(331, 377);
+            this.returnToHomeBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.returnToHomeBtn.Name = "returnToHomeBtn";
-            this.returnToHomeBtn.Size = new System.Drawing.Size(80, 50);
+            this.returnToHomeBtn.Size = new System.Drawing.Size(107, 62);
             this.returnToHomeBtn.TabIndex = 0;
             this.returnToHomeBtn.Text = "Return to Home";
             this.returnToHomeBtn.UseVisualStyleBackColor = true;
@@ -589,10 +577,10 @@
             // 
             // makeReservationButton
             // 
-            this.makeReservationButton.Location = new System.Drawing.Point(130, 95);
-            this.makeReservationButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.makeReservationButton.Location = new System.Drawing.Point(173, 117);
+            this.makeReservationButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.makeReservationButton.Name = "makeReservationButton";
-            this.makeReservationButton.Size = new System.Drawing.Size(128, 85);
+            this.makeReservationButton.Size = new System.Drawing.Size(171, 105);
             this.makeReservationButton.TabIndex = 0;
             this.makeReservationButton.Text = "Make Reservation";
             this.makeReservationButton.UseVisualStyleBackColor = true;
@@ -600,10 +588,10 @@
             // 
             // editReservationButton
             // 
-            this.editReservationButton.Location = new System.Drawing.Point(328, 95);
-            this.editReservationButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.editReservationButton.Location = new System.Drawing.Point(437, 117);
+            this.editReservationButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.editReservationButton.Name = "editReservationButton";
-            this.editReservationButton.Size = new System.Drawing.Size(128, 85);
+            this.editReservationButton.Size = new System.Drawing.Size(171, 105);
             this.editReservationButton.TabIndex = 1;
             this.editReservationButton.Text = "Edit Reservation";
             this.editReservationButton.UseVisualStyleBackColor = true;
@@ -611,10 +599,10 @@
             // 
             // cancelReservationButton
             // 
-            this.cancelReservationButton.Location = new System.Drawing.Point(130, 236);
-            this.cancelReservationButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cancelReservationButton.Location = new System.Drawing.Point(173, 290);
+            this.cancelReservationButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cancelReservationButton.Name = "cancelReservationButton";
-            this.cancelReservationButton.Size = new System.Drawing.Size(128, 85);
+            this.cancelReservationButton.Size = new System.Drawing.Size(171, 105);
             this.cancelReservationButton.TabIndex = 2;
             this.cancelReservationButton.Text = "Cancel Reservation";
             this.cancelReservationButton.UseVisualStyleBackColor = true;
@@ -622,10 +610,10 @@
             // 
             // makeEnquiryButton
             // 
-            this.makeEnquiryButton.Location = new System.Drawing.Point(328, 236);
-            this.makeEnquiryButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.makeEnquiryButton.Location = new System.Drawing.Point(437, 290);
+            this.makeEnquiryButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.makeEnquiryButton.Name = "makeEnquiryButton";
-            this.makeEnquiryButton.Size = new System.Drawing.Size(128, 85);
+            this.makeEnquiryButton.Size = new System.Drawing.Size(171, 105);
             this.makeEnquiryButton.TabIndex = 3;
             this.makeEnquiryButton.Text = "Make Enquiry";
             this.makeEnquiryButton.UseVisualStyleBackColor = true;
@@ -634,10 +622,9 @@
             // 
             this.HomeLabel.AutoSize = true;
             this.HomeLabel.Font = new System.Drawing.Font("Segoe UI Black", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.HomeLabel.Location = new System.Drawing.Point(236, 21);
-            this.HomeLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.HomeLabel.Location = new System.Drawing.Point(315, 26);
             this.HomeLabel.Name = "HomeLabel";
-            this.HomeLabel.Size = new System.Drawing.Size(123, 47);
+            this.HomeLabel.Size = new System.Drawing.Size(155, 60);
             this.HomeLabel.TabIndex = 4;
             this.HomeLabel.Text = "Home";
             // 
@@ -648,18 +635,18 @@
             this.homePanel.Controls.Add(this.makeReservationButton);
             this.homePanel.Controls.Add(this.HomeLabel);
             this.homePanel.Controls.Add(this.makeEnquiryButton);
-            this.homePanel.Location = new System.Drawing.Point(11, 10);
-            this.homePanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.homePanel.Location = new System.Drawing.Point(15, 12);
+            this.homePanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.homePanel.Name = "homePanel";
-            this.homePanel.Size = new System.Drawing.Size(600, 367);
+            this.homePanel.Size = new System.Drawing.Size(800, 452);
             this.homePanel.TabIndex = 5;
             // 
             // confirmButton
             // 
-            this.confirmButton.Location = new System.Drawing.Point(255, 382);
-            this.confirmButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.confirmButton.Location = new System.Drawing.Point(340, 470);
+            this.confirmButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.confirmButton.Name = "confirmButton";
-            this.confirmButton.Size = new System.Drawing.Size(99, 46);
+            this.confirmButton.Size = new System.Drawing.Size(132, 57);
             this.confirmButton.TabIndex = 0;
             this.confirmButton.Text = "Confirm";
             this.confirmButton.UseVisualStyleBackColor = true;
@@ -668,6 +655,7 @@
             // 
             // editReservationPanel
             // 
+            this.editReservationPanel.Controls.Add(this.label23);
             this.editReservationPanel.Controls.Add(this.secondReturnHomeButton);
             this.editReservationPanel.Controls.Add(this.saveNewCheckOutDate);
             this.editReservationPanel.Controls.Add(this.saveNewCheckInDate);
@@ -680,19 +668,19 @@
             this.editReservationPanel.Controls.Add(this.changeBookingTextBox);
             this.editReservationPanel.Controls.Add(this.label17);
             this.editReservationPanel.Controls.Add(this.saveNewRoomIDButton);
-            this.editReservationPanel.Location = new System.Drawing.Point(4, 7);
-            this.editReservationPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.editReservationPanel.Location = new System.Drawing.Point(5, 9);
+            this.editReservationPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.editReservationPanel.Name = "editReservationPanel";
-            this.editReservationPanel.Size = new System.Drawing.Size(607, 383);
+            this.editReservationPanel.Size = new System.Drawing.Size(809, 471);
             this.editReservationPanel.TabIndex = 15;
             // 
             // secondReturnHomeButton
             // 
             this.secondReturnHomeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.secondReturnHomeButton.Location = new System.Drawing.Point(225, 319);
-            this.secondReturnHomeButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.secondReturnHomeButton.Location = new System.Drawing.Point(300, 393);
+            this.secondReturnHomeButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.secondReturnHomeButton.Name = "secondReturnHomeButton";
-            this.secondReturnHomeButton.Size = new System.Drawing.Size(135, 46);
+            this.secondReturnHomeButton.Size = new System.Drawing.Size(180, 57);
             this.secondReturnHomeButton.TabIndex = 13;
             this.secondReturnHomeButton.Text = "Return To Home";
             this.secondReturnHomeButton.UseVisualStyleBackColor = true;
@@ -700,40 +688,41 @@
             // 
             // saveNewCheckOutDate
             // 
-            this.saveNewCheckOutDate.Location = new System.Drawing.Point(492, 242);
-            this.saveNewCheckOutDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.saveNewCheckOutDate.Location = new System.Drawing.Point(656, 298);
+            this.saveNewCheckOutDate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.saveNewCheckOutDate.Name = "saveNewCheckOutDate";
-            this.saveNewCheckOutDate.Size = new System.Drawing.Size(74, 21);
+            this.saveNewCheckOutDate.Size = new System.Drawing.Size(99, 26);
             this.saveNewCheckOutDate.TabIndex = 12;
             this.saveNewCheckOutDate.Text = "Save change";
             this.saveNewCheckOutDate.UseVisualStyleBackColor = true;
+            this.saveNewCheckOutDate.Click += new System.EventHandler(this.saveNewCheckOutDate_Click);
             // 
             // saveNewCheckInDate
             // 
-            this.saveNewCheckInDate.Location = new System.Drawing.Point(492, 193);
-            this.saveNewCheckInDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.saveNewCheckInDate.Location = new System.Drawing.Point(656, 238);
+            this.saveNewCheckInDate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.saveNewCheckInDate.Name = "saveNewCheckInDate";
-            this.saveNewCheckInDate.Size = new System.Drawing.Size(74, 21);
+            this.saveNewCheckInDate.Size = new System.Drawing.Size(99, 26);
             this.saveNewCheckInDate.TabIndex = 11;
             this.saveNewCheckInDate.Text = "Save change";
             this.saveNewCheckInDate.UseVisualStyleBackColor = true;
+            this.saveNewCheckInDate.Click += new System.EventHandler(this.saveNewCheckInDate_Click);
             // 
             // newCheckOutDatePicker
             // 
-            this.newCheckOutDatePicker.Location = new System.Drawing.Point(239, 245);
-            this.newCheckOutDatePicker.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.newCheckOutDatePicker.Location = new System.Drawing.Point(319, 302);
+            this.newCheckOutDatePicker.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.newCheckOutDatePicker.Name = "newCheckOutDatePicker";
-            this.newCheckOutDatePicker.Size = new System.Drawing.Size(182, 20);
+            this.newCheckOutDatePicker.Size = new System.Drawing.Size(241, 22);
             this.newCheckOutDatePicker.TabIndex = 10;
             // 
             // label20
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(61, 246);
-            this.label20.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label20.Location = new System.Drawing.Point(81, 303);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(163, 17);
+            this.label20.Size = new System.Drawing.Size(193, 20);
             this.label20.TabIndex = 9;
             this.label20.Text = "Change Check-out Date:";
             // 
@@ -741,69 +730,66 @@
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(61, 194);
-            this.label19.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label19.Location = new System.Drawing.Point(81, 239);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(154, 17);
+            this.label19.Size = new System.Drawing.Size(183, 20);
             this.label19.TabIndex = 8;
             this.label19.Text = "Change Check-in Date:";
             // 
             // newCheckInDatePicker
             // 
-            this.newCheckInDatePicker.Location = new System.Drawing.Point(239, 193);
-            this.newCheckInDatePicker.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.newCheckInDatePicker.Location = new System.Drawing.Point(319, 238);
+            this.newCheckInDatePicker.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.newCheckInDatePicker.Name = "newCheckInDatePicker";
-            this.newCheckInDatePicker.Size = new System.Drawing.Size(182, 20);
+            this.newCheckInDatePicker.Size = new System.Drawing.Size(241, 22);
             this.newCheckInDatePicker.TabIndex = 7;
             // 
             // label18
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(61, 147);
-            this.label18.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label18.Location = new System.Drawing.Point(81, 181);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(119, 17);
+            this.label18.Size = new System.Drawing.Size(142, 20);
             this.label18.TabIndex = 4;
             this.label18.Text = "Change Room ID:";
             // 
             // newRoomIDTextBox
             // 
-            this.newRoomIDTextBox.Location = new System.Drawing.Point(239, 147);
-            this.newRoomIDTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.newRoomIDTextBox.Location = new System.Drawing.Point(319, 181);
+            this.newRoomIDTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.newRoomIDTextBox.Name = "newRoomIDTextBox";
-            this.newRoomIDTextBox.Size = new System.Drawing.Size(87, 20);
+            this.newRoomIDTextBox.Size = new System.Drawing.Size(115, 22);
             this.newRoomIDTextBox.TabIndex = 3;
             // 
             // changeBookingTextBox
             // 
-            this.changeBookingTextBox.Location = new System.Drawing.Point(239, 108);
-            this.changeBookingTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.changeBookingTextBox.Location = new System.Drawing.Point(319, 133);
+            this.changeBookingTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.changeBookingTextBox.Name = "changeBookingTextBox";
-            this.changeBookingTextBox.Size = new System.Drawing.Size(129, 20);
+            this.changeBookingTextBox.Size = new System.Drawing.Size(171, 22);
             this.changeBookingTextBox.TabIndex = 2;
             // 
             // label17
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(61, 108);
-            this.label17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label17.Location = new System.Drawing.Point(81, 133);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(110, 16);
+            this.label17.Size = new System.Drawing.Size(141, 20);
             this.label17.TabIndex = 1;
             this.label17.Text = "Enter Booking ID:";
             // 
             // saveNewRoomIDButton
             // 
-            this.saveNewRoomIDButton.Location = new System.Drawing.Point(492, 145);
-            this.saveNewRoomIDButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.saveNewRoomIDButton.Location = new System.Drawing.Point(656, 178);
+            this.saveNewRoomIDButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.saveNewRoomIDButton.Name = "saveNewRoomIDButton";
-            this.saveNewRoomIDButton.Size = new System.Drawing.Size(74, 21);
+            this.saveNewRoomIDButton.Size = new System.Drawing.Size(99, 26);
             this.saveNewRoomIDButton.TabIndex = 0;
             this.saveNewRoomIDButton.Text = "Save change";
             this.saveNewRoomIDButton.UseVisualStyleBackColor = true;
-            this.saveNewRoomIDButton.Click += new System.EventHandler(this.button1_Click);
+            this.saveNewRoomIDButton.Click += new System.EventHandler(this.saveNewRoomIDButton_Click);
             // 
             // cancelBookingPanel
             // 
@@ -812,18 +798,18 @@
             this.cancelBookingPanel.Controls.Add(this.cancelBookingIDTxtBx);
             this.cancelBookingPanel.Controls.Add(this.label21);
             this.cancelBookingPanel.Controls.Add(this.deleteBookingButton);
-            this.cancelBookingPanel.Location = new System.Drawing.Point(4, 7);
-            this.cancelBookingPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cancelBookingPanel.Location = new System.Drawing.Point(5, 9);
+            this.cancelBookingPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cancelBookingPanel.Name = "cancelBookingPanel";
-            this.cancelBookingPanel.Size = new System.Drawing.Size(607, 383);
+            this.cancelBookingPanel.Size = new System.Drawing.Size(809, 471);
             this.cancelBookingPanel.TabIndex = 16;
             // 
             // cancelReturnToHomeBtn
             // 
-            this.cancelReturnToHomeBtn.Location = new System.Drawing.Point(239, 328);
-            this.cancelReturnToHomeBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cancelReturnToHomeBtn.Location = new System.Drawing.Point(319, 404);
+            this.cancelReturnToHomeBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cancelReturnToHomeBtn.Name = "cancelReturnToHomeBtn";
-            this.cancelReturnToHomeBtn.Size = new System.Drawing.Size(120, 50);
+            this.cancelReturnToHomeBtn.Size = new System.Drawing.Size(160, 62);
             this.cancelReturnToHomeBtn.TabIndex = 6;
             this.cancelReturnToHomeBtn.Text = "Return to Home";
             this.cancelReturnToHomeBtn.UseVisualStyleBackColor = true;
@@ -834,61 +820,120 @@
             // 
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(206, 12);
-            this.label22.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label22.Location = new System.Drawing.Point(275, 15);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(212, 31);
+            this.label22.Size = new System.Drawing.Size(266, 39);
             this.label22.TabIndex = 5;
             this.label22.Text = "Cancel Booking:";
             // 
             // cancelBookingIDTxtBx
             // 
-            this.cancelBookingIDTxtBx.Location = new System.Drawing.Point(233, 145);
-            this.cancelBookingIDTxtBx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cancelBookingIDTxtBx.Location = new System.Drawing.Point(311, 178);
+            this.cancelBookingIDTxtBx.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cancelBookingIDTxtBx.Name = "cancelBookingIDTxtBx";
-            this.cancelBookingIDTxtBx.Size = new System.Drawing.Size(129, 20);
+            this.cancelBookingIDTxtBx.Size = new System.Drawing.Size(171, 22);
             this.cancelBookingIDTxtBx.TabIndex = 4;
             // 
             // label21
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(237, 108);
-            this.label21.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label21.Location = new System.Drawing.Point(316, 133);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(135, 20);
+            this.label21.Size = new System.Drawing.Size(164, 25);
             this.label21.TabIndex = 3;
             this.label21.Text = "Enter Booking ID:";
             // 
             // deleteBookingButton
             // 
-            this.deleteBookingButton.Location = new System.Drawing.Point(248, 207);
-            this.deleteBookingButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.deleteBookingButton.Location = new System.Drawing.Point(331, 255);
+            this.deleteBookingButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.deleteBookingButton.Name = "deleteBookingButton";
-            this.deleteBookingButton.Size = new System.Drawing.Size(89, 37);
+            this.deleteBookingButton.Size = new System.Drawing.Size(119, 46);
             this.deleteBookingButton.TabIndex = 0;
             this.deleteBookingButton.Text = "Delete Booking";
             this.deleteBookingButton.UseVisualStyleBackColor = true;
             this.deleteBookingButton.Click += new System.EventHandler(this.deleteBookingButton_Click);
             // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Location = new System.Drawing.Point(291, 15);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(209, 39);
+            this.label23.TabIndex = 14;
+            this.label23.Text = "Edit Booking";
+            // 
+            // existingGuestPanel
+            // 
+            this.existingGuestPanel.Controls.Add(this.existingGuestIDNumberTxtBx);
+            this.existingGuestPanel.Controls.Add(this.label25);
+            this.existingGuestPanel.Controls.Add(this.label24);
+            this.existingGuestPanel.Location = new System.Drawing.Point(5, 4);
+            this.existingGuestPanel.Name = "existingGuestPanel";
+            this.existingGuestPanel.Size = new System.Drawing.Size(820, 477);
+            this.existingGuestPanel.TabIndex = 17;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Location = new System.Drawing.Point(291, 11);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(236, 39);
+            this.label24.TabIndex = 0;
+            this.label24.Text = "Existing Guest";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.Location = new System.Drawing.Point(117, 192);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(137, 20);
+            this.label25.TabIndex = 1;
+            this.label25.Text = "Enter ID number:";
+            // 
+            // existingGuestIDNumberTxtBx
+            // 
+            this.existingGuestIDNumberTxtBx.Location = new System.Drawing.Point(319, 189);
+            this.existingGuestIDNumberTxtBx.Name = "existingGuestIDNumberTxtBx";
+            this.existingGuestIDNumberTxtBx.Size = new System.Drawing.Size(171, 22);
+            this.existingGuestIDNumberTxtBx.TabIndex = 2;
+            // 
+            // fakePreviousButton
+            // 
+            this.fakePreviousButton.Location = new System.Drawing.Point(147, 486);
+            this.fakePreviousButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.fakePreviousButton.Name = "fakePreviousButton";
+            this.fakePreviousButton.Size = new System.Drawing.Size(88, 33);
+            this.fakePreviousButton.TabIndex = 18;
+            this.fakePreviousButton.Text = "Previous";
+            this.fakePreviousButton.UseVisualStyleBackColor = true;
+            this.fakePreviousButton.Visible = false;
+            this.fakePreviousButton.Click += new System.EventHandler(this.fakePreviousButton_Click);
+            // 
             // UserInterface
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(620, 461);
+            this.ClientSize = new System.Drawing.Size(827, 567);
+            this.Controls.Add(this.fakePreviousButton);
             this.Controls.Add(this.NextButton);
             this.Controls.Add(this.PreviousButton);
             this.Controls.Add(this.confirmButton);
-            this.Controls.Add(this.addGuestPanel);
-            this.Controls.Add(this.availableRoomsPanel);
-            this.Controls.Add(this.reservationPanel);
             this.Controls.Add(this.newGuestOrOldGuestPanel);
             this.Controls.Add(this.homePanel);
+            this.Controls.Add(this.existingGuestPanel);
             this.Controls.Add(this.cancelBookingPanel);
             this.Controls.Add(this.editReservationPanel);
             this.Controls.Add(this.reservationCompletePanel);
             this.Controls.Add(this.creditCardPanel);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Controls.Add(this.addGuestPanel);
+            this.Controls.Add(this.availableRoomsPanel);
+            this.Controls.Add(this.reservationPanel);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "UserInterface";
             this.Text = "UserInterface";
             this.Load += new System.EventHandler(this.UserInterface_Load);
@@ -911,6 +956,8 @@
             this.editReservationPanel.PerformLayout();
             this.cancelBookingPanel.ResumeLayout(false);
             this.cancelBookingPanel.PerformLayout();
+            this.existingGuestPanel.ResumeLayout(false);
+            this.existingGuestPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -988,5 +1035,11 @@
         private System.Windows.Forms.TextBox cancelBookingIDTxtBx;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Button cancelReturnToHomeBtn;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Panel existingGuestPanel;
+        private System.Windows.Forms.TextBox existingGuestIDNumberTxtBx;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Button fakePreviousButton;
     }
 }

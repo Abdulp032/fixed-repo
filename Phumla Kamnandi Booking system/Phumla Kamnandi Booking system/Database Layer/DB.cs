@@ -17,9 +17,9 @@ namespace Phumla_Kamnandi_Booking_system.Database_Layer
     public class DB
     {
         #region Fields and Data Members
-        static string strConn = Settings.Default.DatabaseConnectionString;
-        static SqlConnection con = new SqlConnection(strConn);
-        //static SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\abdul\\OneDrive\\Desktop\\infos project\\Phumla Kamnandi Booking system\\Phumla Kamnandi Booking system\\Database Layer\\Database.mdf\";Integrated Security=True");
+        //static string strConn = Settings.Default.DatabaseConnectionString;
+        //static SqlConnection con = new SqlConnection(strConn);
+        static SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\abdul\\OneDrive\\Desktop\\infos project\\Phumla Kamnandi Booking system\\Phumla Kamnandi Booking system\\Database Layer\\Database.mdf\";Integrated Security=True");
         protected SqlConnection cnMain;
         protected DataSet dsMain;
         protected SqlDataAdapter daMain;
@@ -40,7 +40,7 @@ namespace Phumla_Kamnandi_Booking_system.Database_Layer
         {
             try
             {
-                cnMain = new SqlConnection(strConn);
+                cnMain = new SqlConnection(con.ToString());
                 dsMain = new DataSet();
             }
             catch (SystemException e)
@@ -324,17 +324,47 @@ namespace Phumla_Kamnandi_Booking_system.Database_Layer
             con.Close();
         }
 
-        // Update only the check in date and check out date of the given booking
-        public static void UpdateBooking(string bookingID, string newCheckInDate, string newCheckOutDate)
+        // Update only the check in date of the given booking
+        public static void UpdateBookingCheckInDate(string bookingID, string newCheckInDate)
         {
             con.Open();
-            SqlCommand cmd = new SqlCommand("UPDATE Bookings SET (CheckInDate=@CheckInDate, CheckOutDate=@CheckOutDate) WHERE BookingID=@BookingID", con);
+            SqlCommand cmd = new SqlCommand("UPDATE Bookings SET (CheckInDate=@CheckInDate) WHERE BookingID=@BookingID", con);
             cmd.Parameters.AddWithValue("@BookingID", bookingID);
             cmd.Parameters.AddWithValue("@CheckInDate", newCheckInDate);
-            cmd.Parameters.AddWithValue("@CheckOutDate", newCheckOutDate);
-
             cmd.ExecuteNonQuery();
             con.Close();
+        }
+
+        // Update only the check out date of the given booking
+        public static void UpdateBookingCheckOutDate(string bookingID, string newCheckOutDate)
+        {
+            con.Open();
+            SqlCommand cmd = new SqlCommand("UPDATE Bookings SET (CheckOutDate=@CheckOutDate) WHERE BookingID=@BookingID", con);
+            cmd.Parameters.AddWithValue("@BookingID", bookingID);
+            cmd.Parameters.AddWithValue("@CheckOutDate", newCheckOutDate);
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
+
+        // Update the RoomID of the given booking
+        public static void UpdateBookingRoomID(string bookingID, string newRoomID)
+        {
+            con.Open();
+            SqlCommand cmd = new SqlCommand("UPDATE Bookings SET (RoomID=@newRoomID) WHERE BookingID=@BookingID", con);
+            cmd.Parameters.AddWithValue("@BookingID", bookingID);
+            cmd.Parameters.AddWithValue("@newRoomID", newRoomID);
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
+
+        public static bool CheckIDNumberInSystem(string guestID)
+        {
+            con.Open();
+            SqlCommand cmd = new SqlCommand("SELECT CASE WHEN EXISTS (SELECT 1 FROM Guests WHERE guestID = @guestID) THEN 1 ELSE 0 END",con);
+            cmd.Parameters.AddWithValue("@guestID", guestID);
+            bool exists = (int)cmd.ExecuteScalar() == 1;
+            con.Close();
+            return exists;
         }
 
         #endregion
