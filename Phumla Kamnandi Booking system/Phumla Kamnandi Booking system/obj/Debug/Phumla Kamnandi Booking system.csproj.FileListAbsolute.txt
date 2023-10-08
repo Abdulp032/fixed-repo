@@ -10,3 +10,28 @@ C:\Users\abdul\OneDrive\Desktop\infos project\Phumla Kamnandi Booking system\Phu
 C:\Users\abdul\OneDrive\Desktop\infos project\Phumla Kamnandi Booking system\Phumla Kamnandi Booking system\obj\Debug\Phumla Kamnandi Booking system.exe
 C:\Users\abdul\OneDrive\Desktop\infos project\Phumla Kamnandi Booking system\Phumla Kamnandi Booking system\obj\Debug\Phumla Kamnandi Booking system.pdb
 C:\Users\abdul\OneDrive\Desktop\infos project\Phumla Kamnandi Booking system\Phumla Kamnandi Booking system\obj\Debug\Phumla_Kamnandi_Booking_system.View_Layer.UserInterface.resources
+C:\Users\shuai\Downloads\fixed-repo-main (1)\fixed-repo-main\Phumla Kamnandi Booking system\Phumla Kamnandi Booking system\bin\Debug\Database Layer\Database.mdf
+C:\Users\shuai\Downloads\fixed-repo-main (1)\fixed-repo-main\Phumla Kamnandi Booking system\Phumla Kamnandi Booking system\bin\Debug\Database Layer\Database_log.ldf
+C:\Users\shuai\Downloads\fixed-repo-main (1)\fixed-repo-main\Phumla Kamnandi Booking system\Phumla Kamnandi Booking system\bin\Debug\Phumla Kamnandi Booking system.exe.config
+C:\Users\shuai\Downloads\fixed-repo-main (1)\fixed-repo-main\Phumla Kamnandi Booking system\Phumla Kamnandi Booking system\bin\Debug\Phumla Kamnandi Booking system.exe
+C:\Users\shuai\Downloads\fixed-repo-main (1)\fixed-repo-main\Phumla Kamnandi Booking system\Phumla Kamnandi Booking system\bin\Debug\Phumla Kamnandi Booking system.pdb
+C:\Users\shuai\Downloads\fixed-repo-main (1)\fixed-repo-main\Phumla Kamnandi Booking system\Phumla Kamnandi Booking system\obj\Debug\Phumla Kamnandi Booking system.csproj.AssemblyReference.cache
+C:\Users\shuai\Downloads\fixed-repo-main (1)\fixed-repo-main\Phumla Kamnandi Booking system\Phumla Kamnandi Booking system\obj\Debug\Phumla Kamnandi Booking system.csproj.SuggestedBindingRedirects.cache
+C:\Users\shuai\Downloads\fixed-repo-main (1)\fixed-repo-main\Phumla Kamnandi Booking system\Phumla Kamnandi Booking system\obj\Debug\Phumla_Kamnandi_Booking_system.Properties.Resources.resources
+C:\Users\shuai\Downloads\fixed-repo-main (1)\fixed-repo-main\Phumla Kamnandi Booking system\Phumla Kamnandi Booking system\obj\Debug\Phumla_Kamnandi_Booking_system.View_Layer.UserInterface.resources
+C:\Users\shuai\Downloads\fixed-repo-main (1)\fixed-repo-main\Phumla Kamnandi Booking system\Phumla Kamnandi Booking system\obj\Debug\Phumla Kamnandi Booking system.csproj.GenerateResource.cache
+C:\Users\shuai\Downloads\fixed-repo-main (1)\fixed-repo-main\Phumla Kamnandi Booking system\Phumla Kamnandi Booking system\obj\Debug\Phumla Kamnandi Booking system.csproj.CoreCompileInputs.cache
+C:\Users\shuai\Downloads\fixed-repo-main (1)\fixed-repo-main\Phumla Kamnandi Booking system\Phumla Kamnandi Booking system\obj\Debug\Phumla Kamnandi Booking system.exe
+C:\Users\shuai\Downloads\fixed-repo-main (1)\fixed-repo-main\Phumla Kamnandi Booking system\Phumla Kamnandi Booking system\obj\Debug\Phumla Kamnandi Booking system.pdb
+C:\Users\abdul\OneDrive\Desktop\Phumla Kamnandi Booking system\Phumla Kamnandi Booking system\bin\Debug\Database Layer\Database.mdf
+C:\Users\abdul\OneDrive\Desktop\Phumla Kamnandi Booking system\Phumla Kamnandi Booking system\bin\Debug\Database Layer\Database_log.ldf
+C:\Users\abdul\OneDrive\Desktop\Phumla Kamnandi Booking system\Phumla Kamnandi Booking system\bin\Debug\Phumla Kamnandi Booking system.exe.config
+C:\Users\abdul\OneDrive\Desktop\Phumla Kamnandi Booking system\Phumla Kamnandi Booking system\bin\Debug\Phumla Kamnandi Booking system.exe
+C:\Users\abdul\OneDrive\Desktop\Phumla Kamnandi Booking system\Phumla Kamnandi Booking system\bin\Debug\Phumla Kamnandi Booking system.pdb
+C:\Users\abdul\OneDrive\Desktop\Phumla Kamnandi Booking system\Phumla Kamnandi Booking system\obj\Debug\Phumla Kamnandi Booking system.csproj.AssemblyReference.cache
+C:\Users\abdul\OneDrive\Desktop\Phumla Kamnandi Booking system\Phumla Kamnandi Booking system\obj\Debug\Phumla_Kamnandi_Booking_system.Properties.Resources.resources
+C:\Users\abdul\OneDrive\Desktop\Phumla Kamnandi Booking system\Phumla Kamnandi Booking system\obj\Debug\Phumla_Kamnandi_Booking_system.View_Layer.UserInterface.resources
+C:\Users\abdul\OneDrive\Desktop\Phumla Kamnandi Booking system\Phumla Kamnandi Booking system\obj\Debug\Phumla Kamnandi Booking system.csproj.GenerateResource.cache
+C:\Users\abdul\OneDrive\Desktop\Phumla Kamnandi Booking system\Phumla Kamnandi Booking system\obj\Debug\Phumla Kamnandi Booking system.csproj.CoreCompileInputs.cache
+C:\Users\abdul\OneDrive\Desktop\Phumla Kamnandi Booking system\Phumla Kamnandi Booking system\obj\Debug\Phumla Kamnandi Booking system.exe
+C:\Users\abdul\OneDrive\Desktop\Phumla Kamnandi Booking system\Phumla Kamnandi Booking system\obj\Debug\Phumla Kamnandi Booking system.pdb

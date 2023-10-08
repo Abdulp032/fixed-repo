@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
@@ -39,7 +40,6 @@ namespace Phumla_Kamnandi_Booking_system.View_Layer
             NextButton.Visible = false;
             PreviousButton.Visible = false;
             
-
         }
 
         private void PreviousButton_Click(object sender, EventArgs e)
@@ -124,8 +124,13 @@ namespace Phumla_Kamnandi_Booking_system.View_Layer
         private void creditCardEnterBtn_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Credit card payment verified.");
-            Booking booking = new Booking(guest.GuestID, 1, checkInDatePicker.Value.Date.ToString(), checkOutDatePicker.Value.Date.ToString());
+
+            string depositStatus = "Confirmed";
+
+            Booking booking = new Booking(guest.GuestID, 1, checkInDatePicker.Value.Date.ToString(), checkOutDatePicker.Value.Date.ToString(), depositStatus);
             DB.InsertBooking(booking);
+            
+            // Display information of the newly-made reservation
             referenceNoLabel.Text = booking.BookingID;
             RoomNoLabel.Text = booking.RoomID.ToString();
             priceLabel.Text = booking.Price.ToString();
@@ -177,6 +182,11 @@ namespace Phumla_Kamnandi_Booking_system.View_Layer
             homePanel.BringToFront();
             index = 0;
             cancelReturnToHomeBtn.Visible = false;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string bookingID = changeBookingTextBox.Text;
         }
     }
 }

@@ -17,6 +17,7 @@ namespace Phumla_Kamnandi_Booking_system.Logic_Layer
         private string checkInDate;
         private string checkOutDate;
         private float price;
+        private string depositStatus;
 
         #endregion
 
@@ -53,18 +54,24 @@ namespace Phumla_Kamnandi_Booking_system.Logic_Layer
             set { price = value; }
         }
 
+        public string DepositStatus
+        {
+            get { return depositStatus; }
+            set { depositStatus = value; }
+        }
         #endregion
 
         #region constructor and methods
 
-        public Booking(string guestID, int roomID, string checkInDate, string checkOutDate)
+        public Booking(string guestID, int roomID, string checkInDate, string checkOutDate, string depositStatus)
         {
-            this.BookingID = generateUniqueBookingID().ToString();
+            this.BookingID = generateUniqueBookingID();
             this.guestID = guestID;
             this.roomID = roomID;
             this.checkInDate = checkInDate;
             this.checkOutDate = checkOutDate;
             this.price = calculatePrice();
+            this.depositStatus = depositStatus;
         }
 
         // Default constructor allowing later instantiation of properties
@@ -73,10 +80,11 @@ namespace Phumla_Kamnandi_Booking_system.Logic_Layer
 
         }
 
-        public static int generateUniqueBookingID()
+        public static string generateUniqueBookingID()
         {
-            int s = DB.getMaxBookingID();
-            return (int)s;
+            DB db = new DB();
+            int uniqueID = db.getMaxBookingID() + 1;
+            return uniqueID.ToString();
         }
 
         public float calculatePrice()
