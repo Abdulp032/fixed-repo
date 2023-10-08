@@ -212,8 +212,7 @@ namespace Phumla_Kamnandi_Booking_system.Database_Layer
             if (s != null && s != DBNull.Value)
             {
                 int r = Convert.ToInt32(s);
-                
-                return r+1;
+                return r+2;
             }
             else
             {
@@ -231,8 +230,7 @@ namespace Phumla_Kamnandi_Booking_system.Database_Layer
             if (s != null && s != DBNull.Value)
             {
                 int r = Convert.ToInt32(s);
-                //MessageBox.Show(r++.ToString());
-                return r+1;
+                return r+2;
             }
             else
             {

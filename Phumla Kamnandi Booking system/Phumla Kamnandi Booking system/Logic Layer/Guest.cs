@@ -92,7 +92,7 @@ namespace Phumla_Kamnandi_Booking_system.Logic_Layer
         // add functionality
         public static string generateUniqueID()
         {
-            int s = DB.getMaxGuestID();
+            int s = DB.getMaxGuestID()+1;
             return s.ToString();
         }
 

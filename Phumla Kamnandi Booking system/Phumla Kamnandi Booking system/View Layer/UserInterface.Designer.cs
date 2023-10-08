@@ -94,11 +94,11 @@
             this.label17 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.cancelBookingPanel = new System.Windows.Forms.Panel();
-            this.deleteBookingButton = new System.Windows.Forms.Button();
+            this.cancelReturnToHomeBtn = new System.Windows.Forms.Button();
+            this.label22 = new System.Windows.Forms.Label();
             this.cancelBookingIDTxtBx = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.cancelReturnToHomeBtn = new System.Windows.Forms.Button();
+            this.deleteBookingButton = new System.Windows.Forms.Button();
             this.availableRoomsPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.reservationPanel.SuspendLayout();
@@ -751,15 +751,26 @@
             this.cancelBookingPanel.Size = new System.Drawing.Size(809, 471);
             this.cancelBookingPanel.TabIndex = 16;
             // 
-            // deleteBookingButton
+            // cancelReturnToHomeBtn
             // 
-            this.deleteBookingButton.Location = new System.Drawing.Point(331, 255);
-            this.deleteBookingButton.Name = "deleteBookingButton";
-            this.deleteBookingButton.Size = new System.Drawing.Size(119, 46);
-            this.deleteBookingButton.TabIndex = 0;
-            this.deleteBookingButton.Text = "Delete Booking";
-            this.deleteBookingButton.UseVisualStyleBackColor = true;
-            this.deleteBookingButton.Click += new System.EventHandler(this.deleteBookingButton_Click);
+            this.cancelReturnToHomeBtn.Location = new System.Drawing.Point(319, 404);
+            this.cancelReturnToHomeBtn.Name = "cancelReturnToHomeBtn";
+            this.cancelReturnToHomeBtn.Size = new System.Drawing.Size(160, 62);
+            this.cancelReturnToHomeBtn.TabIndex = 6;
+            this.cancelReturnToHomeBtn.Text = "Return to Home";
+            this.cancelReturnToHomeBtn.UseVisualStyleBackColor = true;
+            this.cancelReturnToHomeBtn.Visible = false;
+            this.cancelReturnToHomeBtn.Click += new System.EventHandler(this.cancelReturnToHomeBtn_Click);
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(275, 15);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(266, 39);
+            this.label22.TabIndex = 5;
+            this.label22.Text = "Cancel Booking:";
             // 
             // cancelBookingIDTxtBx
             // 
@@ -778,26 +789,15 @@
             this.label21.TabIndex = 3;
             this.label21.Text = "Enter Booking ID:";
             // 
-            // label22
+            // deleteBookingButton
             // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(275, 15);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(266, 39);
-            this.label22.TabIndex = 5;
-            this.label22.Text = "Cancel Booking:";
-            // 
-            // cancelReturnToHomeBtn
-            // 
-            this.cancelReturnToHomeBtn.Location = new System.Drawing.Point(319, 404);
-            this.cancelReturnToHomeBtn.Name = "cancelReturnToHomeBtn";
-            this.cancelReturnToHomeBtn.Size = new System.Drawing.Size(160, 62);
-            this.cancelReturnToHomeBtn.TabIndex = 6;
-            this.cancelReturnToHomeBtn.Text = "Return to Home";
-            this.cancelReturnToHomeBtn.UseVisualStyleBackColor = true;
-            this.cancelReturnToHomeBtn.Visible = false;
-            this.cancelReturnToHomeBtn.Click += new System.EventHandler(this.cancelReturnToHomeBtn_Click);
+            this.deleteBookingButton.Location = new System.Drawing.Point(331, 255);
+            this.deleteBookingButton.Name = "deleteBookingButton";
+            this.deleteBookingButton.Size = new System.Drawing.Size(119, 46);
+            this.deleteBookingButton.TabIndex = 0;
+            this.deleteBookingButton.Text = "Delete Booking";
+            this.deleteBookingButton.UseVisualStyleBackColor = true;
+            this.deleteBookingButton.Click += new System.EventHandler(this.deleteBookingButton_Click);
             // 
             // UserInterface
             // 
@@ -807,6 +807,7 @@
             this.Controls.Add(this.NextButton);
             this.Controls.Add(this.PreviousButton);
             this.Controls.Add(this.confirmButton);
+            this.Controls.Add(this.homePanel);
             this.Controls.Add(this.cancelBookingPanel);
             this.Controls.Add(this.editReservationPanel);
             this.Controls.Add(this.reservationCompletePanel);
@@ -815,7 +816,6 @@
             this.Controls.Add(this.availableRoomsPanel);
             this.Controls.Add(this.reservationPanel);
             this.Controls.Add(this.newGuestOrOldGuestPanel);
-            this.Controls.Add(this.homePanel);
             this.Name = "UserInterface";
             this.Text = "UserInterface";
             this.Load += new System.EventHandler(this.UserInterface_Load);
