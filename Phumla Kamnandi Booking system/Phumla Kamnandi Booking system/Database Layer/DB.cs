@@ -21,7 +21,7 @@ namespace Phumla_Kamnandi_Booking_system.Database_Layer
         //static string strConn = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\shuai\\Downloads\\fixed-repo-main\\fixed-repo-main\\Phumla Kamnandi Booking system\\Phumla Kamnandi Booking system\\Database Layer\\Database.mdf\";Integrated Security=True";
         static string strConn = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\abdul\\OneDrive\\Desktop\\infos project\\Phumla Kamnandi Booking system\\Phumla Kamnandi Booking system\\Database Layer\\Database.mdf\";Integrated Security=True";
         static SqlConnection con = new SqlConnection(strConn);
-        //static SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\abdul\\OneDrive\\Desktop\\infos project\\Phumla Kamnandi Booking system\\Phumla Kamnandi Booking system\\Database Layer\\Database.mdf\";Integrated Security=True");
+        
         
         protected SqlConnection cnMain = new SqlConnection(con.ToString());
         protected DataSet dsMain = new DataSet(); 
@@ -30,12 +30,7 @@ namespace Phumla_Kamnandi_Booking_system.Database_Layer
         private Collection<Guest> guests;
         private Collection<Booking> bookings;
 
-        public enum DBOperation
-        {
-            Add = 0,
-            Edit = 1,
-            Delete = 2
-        }
+       
         #endregion
 
         #region Constructor
@@ -387,12 +382,13 @@ namespace Phumla_Kamnandi_Booking_system.Database_Layer
             con.Close();
         }
 
-        public static bool CheckIDNumberInSystem(string guestID)
+        public static bool CheckIDNumberInSystem(string IDNumber)
         {
             con.Open();
-            SqlCommand cmd = new SqlCommand("SELECT CASE WHEN EXISTS (SELECT 1 FROM Guests WHERE guestID = @guestID) THEN 1 ELSE 0 END",con);
-            cmd.Parameters.AddWithValue("@guestID", guestID);
-            bool exists = (int)cmd.ExecuteScalar() == 1;
+            SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM Guests WHERE IDNumber = @IDnumber", con);
+            cmd.Parameters.AddWithValue("@IDnumber", IDNumber);
+            int count = (int)cmd.ExecuteScalar();
+            bool exists =  count > 0;
             con.Close();
             return exists;
         }

@@ -61,7 +61,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.creditCardPanel = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label28 = new System.Windows.Forms.Label();
+            this.creditCardDetailsTxtBox = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.creditCardEnterBtn = new System.Windows.Forms.Button();
             this.reservationCompletePanel = new System.Windows.Forms.Panel();
@@ -106,13 +107,13 @@
             this.label24 = new System.Windows.Forms.Label();
             this.fakePreviousButton = new System.Windows.Forms.Button();
             this.enquirePanel = new System.Windows.Forms.Panel();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.bookingEnquiryTxtBx = new System.Windows.Forms.TextBox();
-            this.bookingInfoLabel = new System.Windows.Forms.Label();
-            this.bookingEnquiryGridView = new System.Windows.Forms.DataGridView();
-            this.enquiryEnterBtn = new System.Windows.Forms.Button();
             this.enquiryPreviousButton = new System.Windows.Forms.Button();
+            this.enquiryEnterBtn = new System.Windows.Forms.Button();
+            this.bookingEnquiryGridView = new System.Windows.Forms.DataGridView();
+            this.bookingInfoLabel = new System.Windows.Forms.Label();
+            this.bookingEnquiryTxtBx = new System.Windows.Forms.TextBox();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
             this.availableRoomsPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.reservationPanel.SuspendLayout();
@@ -209,7 +210,7 @@
             // 
             // PreviousButton
             // 
-            this.PreviousButton.Location = new System.Drawing.Point(142, 482);
+            this.PreviousButton.Location = new System.Drawing.Point(141, 482);
             this.PreviousButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PreviousButton.Name = "PreviousButton";
             this.PreviousButton.Size = new System.Drawing.Size(88, 33);
@@ -249,6 +250,8 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(201, 263);
             this.dataGridView1.TabIndex = 10;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValueChanged);
             // 
             // availableRoomsLabel
             // 
@@ -453,7 +456,8 @@
             // 
             // creditCardPanel
             // 
-            this.creditCardPanel.Controls.Add(this.textBox1);
+            this.creditCardPanel.Controls.Add(this.label28);
+            this.creditCardPanel.Controls.Add(this.creditCardDetailsTxtBox);
             this.creditCardPanel.Controls.Add(this.label12);
             this.creditCardPanel.Controls.Add(this.creditCardEnterBtn);
             this.creditCardPanel.Location = new System.Drawing.Point(9, 9);
@@ -462,13 +466,23 @@
             this.creditCardPanel.Size = new System.Drawing.Size(803, 452);
             this.creditCardPanel.TabIndex = 13;
             // 
-            // textBox1
+            // label28
             // 
-            this.textBox1.Location = new System.Drawing.Point(283, 90);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(169, 22);
-            this.textBox1.TabIndex = 2;
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(232, 63);
+            this.label28.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(273, 16);
+            this.label28.TabIndex = 3;
+            this.label28.Text = "Enter card number or leave blank to pay later";
+            // 
+            // creditCardDetailsTxtBox
+            // 
+            this.creditCardDetailsTxtBox.Location = new System.Drawing.Point(283, 90);
+            this.creditCardDetailsTxtBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.creditCardDetailsTxtBox.Name = "creditCardDetailsTxtBox";
+            this.creditCardDetailsTxtBox.Size = new System.Drawing.Size(169, 22);
+            this.creditCardDetailsTxtBox.TabIndex = 2;
             // 
             // label12
             // 
@@ -882,13 +896,15 @@
             this.existingGuestPanel.Controls.Add(this.label25);
             this.existingGuestPanel.Controls.Add(this.label24);
             this.existingGuestPanel.Location = new System.Drawing.Point(5, 4);
+            this.existingGuestPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.existingGuestPanel.Name = "existingGuestPanel";
-            this.existingGuestPanel.Size = new System.Drawing.Size(820, 477);
+            this.existingGuestPanel.Size = new System.Drawing.Size(820, 478);
             this.existingGuestPanel.TabIndex = 17;
             // 
             // existingGuestIDNumberTxtBx
             // 
-            this.existingGuestIDNumberTxtBx.Location = new System.Drawing.Point(319, 189);
+            this.existingGuestIDNumberTxtBx.Location = new System.Drawing.Point(319, 190);
+            this.existingGuestIDNumberTxtBx.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.existingGuestIDNumberTxtBx.Name = "existingGuestIDNumberTxtBx";
             this.existingGuestIDNumberTxtBx.Size = new System.Drawing.Size(171, 22);
             this.existingGuestIDNumberTxtBx.TabIndex = 2;
@@ -915,7 +931,7 @@
             // 
             // fakePreviousButton
             // 
-            this.fakePreviousButton.Location = new System.Drawing.Point(142, 482);
+            this.fakePreviousButton.Location = new System.Drawing.Point(141, 482);
             this.fakePreviousButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.fakePreviousButton.Name = "fakePreviousButton";
             this.fakePreviousButton.Size = new System.Drawing.Size(88, 33);
@@ -937,19 +953,64 @@
             this.enquirePanel.Controls.Add(this.label27);
             this.enquirePanel.Controls.Add(this.label26);
             this.enquirePanel.Location = new System.Drawing.Point(5, 4);
+            this.enquirePanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.enquirePanel.Name = "enquirePanel";
-            this.enquirePanel.Size = new System.Drawing.Size(820, 515);
+            this.enquirePanel.Size = new System.Drawing.Size(820, 514);
             this.enquirePanel.TabIndex = 19;
             // 
-            // label26
+            // enquiryPreviousButton
             // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(275, 16);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(266, 39);
-            this.label26.TabIndex = 0;
-            this.label26.Text = "Booking Enquiry";
+            this.enquiryPreviousButton.Location = new System.Drawing.Point(141, 482);
+            this.enquiryPreviousButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.enquiryPreviousButton.Name = "enquiryPreviousButton";
+            this.enquiryPreviousButton.Size = new System.Drawing.Size(88, 33);
+            this.enquiryPreviousButton.TabIndex = 19;
+            this.enquiryPreviousButton.Text = "Previous";
+            this.enquiryPreviousButton.UseVisualStyleBackColor = true;
+            this.enquiryPreviousButton.Visible = false;
+            this.enquiryPreviousButton.Click += new System.EventHandler(this.enquiryPreviousButton_Click);
+            // 
+            // enquiryEnterBtn
+            // 
+            this.enquiryEnterBtn.Location = new System.Drawing.Point(365, 167);
+            this.enquiryEnterBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.enquiryEnterBtn.Name = "enquiryEnterBtn";
+            this.enquiryEnterBtn.Size = new System.Drawing.Size(75, 23);
+            this.enquiryEnterBtn.TabIndex = 5;
+            this.enquiryEnterBtn.Text = "Enter";
+            this.enquiryEnterBtn.UseVisualStyleBackColor = true;
+            this.enquiryEnterBtn.Click += new System.EventHandler(this.enquiryEnterBtn_Click);
+            // 
+            // bookingEnquiryGridView
+            // 
+            this.bookingEnquiryGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.bookingEnquiryGridView.Location = new System.Drawing.Point(13, 298);
+            this.bookingEnquiryGridView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.bookingEnquiryGridView.Name = "bookingEnquiryGridView";
+            this.bookingEnquiryGridView.RowHeadersWidth = 51;
+            this.bookingEnquiryGridView.RowTemplate.Height = 24;
+            this.bookingEnquiryGridView.Size = new System.Drawing.Size(789, 94);
+            this.bookingEnquiryGridView.TabIndex = 4;
+            this.bookingEnquiryGridView.Visible = false;
+            // 
+            // bookingInfoLabel
+            // 
+            this.bookingInfoLabel.AutoSize = true;
+            this.bookingInfoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bookingInfoLabel.Location = new System.Drawing.Point(307, 246);
+            this.bookingInfoLabel.Name = "bookingInfoLabel";
+            this.bookingInfoLabel.Size = new System.Drawing.Size(190, 25);
+            this.bookingInfoLabel.TabIndex = 3;
+            this.bookingInfoLabel.Text = "Booking Information:";
+            this.bookingInfoLabel.Visible = false;
+            // 
+            // bookingEnquiryTxtBx
+            // 
+            this.bookingEnquiryTxtBx.Location = new System.Drawing.Point(287, 118);
+            this.bookingEnquiryTxtBx.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.bookingEnquiryTxtBx.Name = "bookingEnquiryTxtBx";
+            this.bookingEnquiryTxtBx.Size = new System.Drawing.Size(240, 22);
+            this.bookingEnquiryTxtBx.TabIndex = 2;
             // 
             // label27
             // 
@@ -961,56 +1022,15 @@
             this.label27.TabIndex = 1;
             this.label27.Text = "Enter Booking ID:";
             // 
-            // bookingEnquiryTxtBx
+            // label26
             // 
-            this.bookingEnquiryTxtBx.Location = new System.Drawing.Point(287, 118);
-            this.bookingEnquiryTxtBx.Name = "bookingEnquiryTxtBx";
-            this.bookingEnquiryTxtBx.Size = new System.Drawing.Size(240, 22);
-            this.bookingEnquiryTxtBx.TabIndex = 2;
-            // 
-            // bookingInfoLabel
-            // 
-            this.bookingInfoLabel.AutoSize = true;
-            this.bookingInfoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bookingInfoLabel.Location = new System.Drawing.Point(306, 246);
-            this.bookingInfoLabel.Name = "bookingInfoLabel";
-            this.bookingInfoLabel.Size = new System.Drawing.Size(190, 25);
-            this.bookingInfoLabel.TabIndex = 3;
-            this.bookingInfoLabel.Text = "Booking Information:";
-            this.bookingInfoLabel.Visible = false;
-            // 
-            // bookingEnquiryGridView
-            // 
-            this.bookingEnquiryGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.bookingEnquiryGridView.Location = new System.Drawing.Point(13, 298);
-            this.bookingEnquiryGridView.Name = "bookingEnquiryGridView";
-            this.bookingEnquiryGridView.RowHeadersWidth = 51;
-            this.bookingEnquiryGridView.RowTemplate.Height = 24;
-            this.bookingEnquiryGridView.Size = new System.Drawing.Size(789, 93);
-            this.bookingEnquiryGridView.TabIndex = 4;
-            this.bookingEnquiryGridView.Visible = false;
-            // 
-            // enquiryEnterBtn
-            // 
-            this.enquiryEnterBtn.Location = new System.Drawing.Point(366, 167);
-            this.enquiryEnterBtn.Name = "enquiryEnterBtn";
-            this.enquiryEnterBtn.Size = new System.Drawing.Size(75, 23);
-            this.enquiryEnterBtn.TabIndex = 5;
-            this.enquiryEnterBtn.Text = "Enter";
-            this.enquiryEnterBtn.UseVisualStyleBackColor = true;
-            this.enquiryEnterBtn.Click += new System.EventHandler(this.enquiryEnterBtn_Click);
-            // 
-            // enquiryPreviousButton
-            // 
-            this.enquiryPreviousButton.Location = new System.Drawing.Point(142, 482);
-            this.enquiryPreviousButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.enquiryPreviousButton.Name = "enquiryPreviousButton";
-            this.enquiryPreviousButton.Size = new System.Drawing.Size(88, 33);
-            this.enquiryPreviousButton.TabIndex = 19;
-            this.enquiryPreviousButton.Text = "Previous";
-            this.enquiryPreviousButton.UseVisualStyleBackColor = true;
-            this.enquiryPreviousButton.Visible = false;
-            this.enquiryPreviousButton.Click += new System.EventHandler(this.enquiryPreviousButton_Click);
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.Location = new System.Drawing.Point(275, 16);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(266, 39);
+            this.label26.TabIndex = 0;
+            this.label26.Text = "Booking Enquiry";
             // 
             // UserInterface
             // 
@@ -1019,7 +1039,6 @@
             this.ClientSize = new System.Drawing.Size(827, 567);
             this.Controls.Add(this.NextButton);
             this.Controls.Add(this.confirmButton);
-            this.Controls.Add(this.enquirePanel);
             this.Controls.Add(this.existingGuestPanel);
             this.Controls.Add(this.cancelBookingPanel);
             this.Controls.Add(this.editReservationPanel);
@@ -1030,6 +1049,7 @@
             this.Controls.Add(this.reservationPanel);
             this.Controls.Add(this.newGuestOrOldGuestPanel);
             this.Controls.Add(this.homePanel);
+            this.Controls.Add(this.enquirePanel);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "UserInterface";
             this.Text = "UserInterface";
@@ -1106,7 +1126,7 @@
         private System.Windows.Forms.Panel creditCardPanel;
         private System.Windows.Forms.Button creditCardEnterBtn;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox creditCardDetailsTxtBox;
         private System.Windows.Forms.Panel reservationCompletePanel;
         private System.Windows.Forms.Button returnToHomeBtn;
         private System.Windows.Forms.Label referenceNoLabel;
@@ -1149,5 +1169,6 @@
         private System.Windows.Forms.Label bookingInfoLabel;
         private System.Windows.Forms.Button enquiryEnterBtn;
         private System.Windows.Forms.Button enquiryPreviousButton;
+        private System.Windows.Forms.Label label28;
     }
 }

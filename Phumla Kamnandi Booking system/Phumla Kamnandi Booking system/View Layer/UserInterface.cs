@@ -19,7 +19,9 @@ namespace Phumla_Kamnandi_Booking_system.View_Layer
     {
         List<Panel> listPanel = new List<Panel>();
         int index;
+        int roomID;
         Guest guest;
+
         public UserInterface()
         {  
             InitializeComponent(); 
@@ -42,9 +44,6 @@ namespace Phumla_Kamnandi_Booking_system.View_Layer
             NextButton.Visible = false;
             PreviousButton.Visible = false;
 
-            // test code
-            /*Guest guest = new Guest("IDNumber", "Name", "Surname", "1234567890", "someone@example.com", "123 This Road");
-            DB.InsertGuest(guest);*/
         }
 
         private void PreviousButton_Click(object sender, EventArgs e)
@@ -57,6 +56,7 @@ namespace Phumla_Kamnandi_Booking_system.View_Layer
                 index = 3;
                 newGuestOrOldGuestPanel.BringToFront();
                 NextButton.Visible=false;
+                fakePreviousButton.Visible=false;
                 return;
             }
             if (index == 7)
@@ -92,8 +92,8 @@ namespace Phumla_Kamnandi_Booking_system.View_Layer
             
             if (index == 9)
             {
-                if (DB.CheckIDNumberInSystem((existingGuestIDNumberTxtBx.Text)))
-                {
+                if (DB.CheckIDNumberInSystem((existingGuestIDNumberTxtBx.Text)))                                        // clicking next after supplying [[existing Guest ID]]
+                {                                                                                                       // checking in DB if guestId exists
                     MessageBox.Show("Guest has been found in system, proceed with booking.");
                     guest = new Guest();
                     guest.GuestID = existingGuestIDNumberTxtBx.Text;
@@ -104,7 +104,10 @@ namespace Phumla_Kamnandi_Booking_system.View_Layer
                     index = 5;
                     return;
                 }
-                MessageBox.Show("Guest does not exist in system, try again.");
+                MessageBox.Show("Guest does not exist in system, try again.");                                          // guest was not found in system
+                existingGuestIDNumberTxtBx.Clear();
+                existingGuestIDNumberTxtBx.Focus();
+                
                 return;
             }
             if (index < listPanel.Count - 1)
@@ -119,6 +122,10 @@ namespace Phumla_Kamnandi_Booking_system.View_Layer
             {
                 dataGridView1.DataSource = DB.getAvailableRoomsTable(checkInDatePicker.Value.Date, checkOutDatePicker.Value.Date);
                 availableRoomsLabel.Text = "There are " + DB.getNumRoomsAvailable(checkInDatePicker.Value.Date, checkOutDatePicker.Value.Date).ToString() + " rooms available.";
+                // test
+                DataGridViewCell selectedRow = dataGridView1.SelectedCells[0];
+                string cellValue = selectedRow.Value.ToString();
+                roomID = int.Parse(cellValue);
             }
             if(index == 3)
             {
@@ -160,9 +167,21 @@ namespace Phumla_Kamnandi_Booking_system.View_Layer
         {
             MessageBox.Show("Credit card payment verified.");
 
-            string depositStatus = "Confirmed";
+            string depositStatus;
+            if (creditCardDetailsTxtBox.Text == "") // if no credit information was given
+            {
+                depositStatus = "Unconfirmed";
+            }
+            else
+            {
+                depositStatus = "Confirmed";
+            }
 
-            Booking booking = new Booking(guest.GuestID, 1, checkInDatePicker.Value.Date.ToString(), checkOutDatePicker.Value.Date.ToString(), depositStatus);
+
+            // create a new reservation with the supplied details
+            
+            //Booking booking = new Booking(guest.GuestID, 1, checkInDatePicker.Value.Date.ToString(), checkOutDatePicker.Value.Date.ToString(), depositStatus);
+            Booking booking = new Booking(guest.GuestID, roomID, checkInDatePicker.Value.Date.ToString(), checkOutDatePicker.Value.Date.ToString(), depositStatus);
             DB.InsertBooking(booking);
             
             // Display information of the newly-made reservation
@@ -281,6 +300,24 @@ namespace Phumla_Kamnandi_Booking_system.View_Layer
                 index = 0;
                 enquiryPreviousButton.Visible = false;
   
+        }
+
+        // Ignore this method
+        private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        // Changes the roomID when the user clicks on cells in the dataGridView1
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Check if the clicked cell is within the data grid view
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                object cellValue = dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value;
+
+                roomID = int.Parse(cellValue.ToString());
+            }
         }
     }
 }

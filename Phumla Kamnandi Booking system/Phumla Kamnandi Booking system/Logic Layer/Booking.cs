@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 using Phumla_Kamnandi_Booking_system.Database_Layer;
@@ -65,7 +66,7 @@ namespace Phumla_Kamnandi_Booking_system.Logic_Layer
 
         public Booking(string guestID, int roomID, string checkInDate, string checkOutDate, string depositStatus)
         {
-            this.BookingID = "1";
+            this.BookingID = GenerateUniqueBookingID();
             this.guestID = guestID;
             this.roomID = roomID;
             this.checkInDate = checkInDate;
@@ -77,15 +78,14 @@ namespace Phumla_Kamnandi_Booking_system.Logic_Layer
         // Default constructor allowing later instantiation of properties
         public Booking()
         {
-            this.BookingID = "1";
+            this.BookingID = GenerateUniqueBookingID();
         }
 
-        /*public static string generateUniqueBookingID()
+        public static string GenerateUniqueBookingID()
         {
-            DB db = new DB();
-            int uniqueID = db.getMaxBookingID() + 1;
-            return uniqueID.ToString();
-        }*/
+            int highestID = DB.GetMaxBookingID();
+            return (highestID + 1).ToString();
+        }
 
         public float calculatePrice()
         {
