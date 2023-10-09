@@ -1039,6 +1039,8 @@
             this.ClientSize = new System.Drawing.Size(827, 567);
             this.Controls.Add(this.NextButton);
             this.Controls.Add(this.confirmButton);
+            this.Controls.Add(this.homePanel);
+            this.Controls.Add(this.enquirePanel);
             this.Controls.Add(this.existingGuestPanel);
             this.Controls.Add(this.cancelBookingPanel);
             this.Controls.Add(this.editReservationPanel);
@@ -1048,8 +1050,6 @@
             this.Controls.Add(this.availableRoomsPanel);
             this.Controls.Add(this.reservationPanel);
             this.Controls.Add(this.newGuestOrOldGuestPanel);
-            this.Controls.Add(this.homePanel);
-            this.Controls.Add(this.enquirePanel);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "UserInterface";
             this.Text = "UserInterface";
