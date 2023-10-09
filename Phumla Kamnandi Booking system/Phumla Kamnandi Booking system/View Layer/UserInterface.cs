@@ -37,16 +37,21 @@ namespace Phumla_Kamnandi_Booking_system.View_Layer
             listPanel.Add(editReservationPanel); // at index 7
             listPanel.Add(cancelBookingPanel);   // at index 8
             listPanel.Add(existingGuestPanel);   // at index 9
+            listPanel.Add(enquirePanel);         // at index 10
             listPanel[index].BringToFront();
             NextButton.Visible = false;
             PreviousButton.Visible = false;
-            
+
+            // test code
+            /*Guest guest = new Guest("IDNumber", "Name", "Surname", "1234567890", "someone@example.com", "123 This Road");
+            DB.InsertGuest(guest);*/
         }
 
         private void PreviousButton_Click(object sender, EventArgs e)
         {
             confirmButton.Visible = false;
             NextButton.Visible = true;
+            
             if(index == 9)
             {
                 index = 3;
@@ -252,6 +257,30 @@ namespace Phumla_Kamnandi_Booking_system.View_Layer
             NextButton.Visible = false;
             fakePreviousButton.Visible = false;
             index = 3;
+        }
+
+        private void makeEnquiryButton_Click(object sender, EventArgs e)
+        {
+            enquirePanel.BringToFront();
+            NextButton.Visible = false;
+            enquiryPreviousButton.Visible = true;
+
+        }
+
+        private void enquiryEnterBtn_Click(object sender, EventArgs e)
+        {
+            
+            bookingEnquiryGridView.DataSource = DB.displayBookingInfo(bookingEnquiryTxtBx.Text);
+            bookingEnquiryGridView.Visible = true;
+            bookingInfoLabel.Visible = true;
+        }
+
+        private void enquiryPreviousButton_Click(object sender, EventArgs e)
+        {
+                homePanel.BringToFront();
+                index = 0;
+                enquiryPreviousButton.Visible = false;
+  
         }
     }
 }

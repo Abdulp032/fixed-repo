@@ -65,7 +65,7 @@ namespace Phumla_Kamnandi_Booking_system.Logic_Layer
 
         public Booking(string guestID, int roomID, string checkInDate, string checkOutDate, string depositStatus)
         {
-            this.BookingID = generateUniqueBookingID();
+            this.BookingID = "1";
             this.guestID = guestID;
             this.roomID = roomID;
             this.checkInDate = checkInDate;
@@ -77,15 +77,15 @@ namespace Phumla_Kamnandi_Booking_system.Logic_Layer
         // Default constructor allowing later instantiation of properties
         public Booking()
         {
-
+            this.BookingID = "1";
         }
 
-        public static string generateUniqueBookingID()
+        /*public static string generateUniqueBookingID()
         {
             DB db = new DB();
             int uniqueID = db.getMaxBookingID() + 1;
             return uniqueID.ToString();
-        }
+        }*/
 
         public float calculatePrice()
         {

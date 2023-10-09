@@ -73,7 +73,7 @@ namespace Phumla_Kamnandi_Booking_system.Logic_Layer
 
         public Guest(string idNumber, string name, string surname, string phoneNumber, string email, string address)
         {
-            this.GuestID = generateUniqueID();
+            this.GuestID = GenerateUniqueID();
             this.IDNumber = idNumber;
             this.name = name;
             this.surname = surname;
@@ -86,18 +86,14 @@ namespace Phumla_Kamnandi_Booking_system.Logic_Layer
         // Default Constructor to allow later assignment of fields
         public Guest()
         {
-
+            this.GuestID = GenerateUniqueID();
         }
-        
-        // add functionality
-        public static string generateUniqueID()
-        {
-           DB dB = new DB();
-            dB.PopulateCollections();
-            int highestID = dB.getMaxGuestID();
-            
-            return (highestID + 1).ToString();
 
+        // add functionality
+        public static string GenerateUniqueID()
+        {
+            int highest = DB.GetMaxGuestID();
+            return (highest + 1).ToString();
         }
 
         #endregion

@@ -11,17 +11,20 @@ using Phumla_Kamnandi_Booking_system.View_Layer;
 using Phumla_Kamnandi_Booking_system.Logic_Layer;
 using System.Drawing;
 using System.Collections.ObjectModel;
+using System.Security.Policy;
 
 namespace Phumla_Kamnandi_Booking_system.Database_Layer
 {
     public class DB
     {
         #region Fields and Data Members
-        //static string strConn = Settings.Default.DatabaseConnectionString;
-        //static SqlConnection con = new SqlConnection(strConn);
-        static SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\abdul\\OneDrive\\Desktop\\infos project\\Phumla Kamnandi Booking system\\Phumla Kamnandi Booking system\\Database Layer\\Database.mdf\";Integrated Security=True");
-        protected SqlConnection cnMain;
-        protected DataSet dsMain;
+        //static string strConn = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\shuai\\Downloads\\fixed-repo-main\\fixed-repo-main\\Phumla Kamnandi Booking system\\Phumla Kamnandi Booking system\\Database Layer\\Database.mdf\";Integrated Security=True";
+        static string strConn = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\abdul\\OneDrive\\Desktop\\infos project\\Phumla Kamnandi Booking system\\Phumla Kamnandi Booking system\\Database Layer\\Database.mdf\";Integrated Security=True";
+        static SqlConnection con = new SqlConnection(strConn);
+        //static SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\abdul\\OneDrive\\Desktop\\infos project\\Phumla Kamnandi Booking system\\Phumla Kamnandi Booking system\\Database Layer\\Database.mdf\";Integrated Security=True");
+        
+        protected SqlConnection cnMain = new SqlConnection(con.ToString());
+        protected DataSet dsMain = new DataSet(); 
         protected SqlDataAdapter daMain;
 
         private Collection<Guest> guests;
@@ -145,7 +148,7 @@ namespace Phumla_Kamnandi_Booking_system.Database_Layer
             }
 
             sqlQuery = "SELECT * FROM Bookings";
-            daMain = new SqlDataAdapter( sqlQuery, cnMain );
+            daMain = new SqlDataAdapter(sqlQuery, cnMain);
             daMain.Fill(dsMain, "Bookings");
 
             // Adding all booking records to the bookings collection
@@ -169,38 +172,65 @@ namespace Phumla_Kamnandi_Booking_system.Database_Layer
         }
 
         // Returns the highest guest id in the table of guests
-        public int getMaxGuestID()
-        {
-            PopulateCollections();
 
-            // Looping through each guest in the collection of guests to find the highest GuestID
+        public static int GetMaxGuestID()
+        {
+            DataRow myRow = null;
+
+            DataSet dsMain = new DataSet();
+            SqlDataAdapter daMain;
+
+        string sqlQuery = "SELECT * FROM Guests";
+            daMain = new SqlDataAdapter(sqlQuery, con);
+            daMain.Fill(dsMain, "Guests");
+
             int highest = 0;
-            foreach (Guest guest in guests)
+            int currentID;
+            // Search through all guest records to find the max ID
+            foreach (DataRow myRow_loopVariable in dsMain.Tables["Guests"].Rows)
             {
-                if (int.Parse(guest.GuestID) > highest)
+                myRow = myRow_loopVariable;
+
+                if (!(myRow.RowState == DataRowState.Deleted))
                 {
-                    highest = int.Parse(guest.GuestID);
+                    currentID = int.Parse(Convert.ToString(myRow["GuestID"]).TrimEnd());
+                    if (currentID > highest)
+                    {
+                        highest = currentID;
+                    }
                 }
             }
-
             return highest;
         }
 
         // Returns the highest booking id in the table of bookings
-        public int getMaxBookingID()
-        {
-            PopulateCollections();
 
-            // Looping through each booking in the collection of bookings to find the highest BookingID
+        public static int GetMaxBookingID()
+        {
+            DataRow myRow = null;
+            DataSet dsMain = new DataSet();
+            SqlDataAdapter daMain;
+
+            string sqlQuery = "SELECT * FROM Bookings";
+            daMain = new SqlDataAdapter(sqlQuery, con);
+            daMain.Fill(dsMain, "Bookings");
+
             int highest = 0;
-            foreach (Booking booking in bookings)
+            int currentID;
+            // Search through all guest records to find the max ID
+            foreach (DataRow myRow_loopVariable in dsMain.Tables["Bookings"].Rows)
             {
-                if (int.Parse(booking.BookingID) > highest)
+                myRow = myRow_loopVariable;
+
+                if (!(myRow.RowState == DataRowState.Deleted))
                 {
-                    highest = int.Parse(booking.BookingID);
+                    currentID = int.Parse(Convert.ToString(myRow["BookingID"]).TrimEnd());
+                    if (currentID > highest)
+                    {
+                        highest = currentID;
+                    }
                 }
             }
-
             return highest;
         }
 
@@ -328,7 +358,7 @@ namespace Phumla_Kamnandi_Booking_system.Database_Layer
         public static void UpdateBookingCheckInDate(string bookingID, string newCheckInDate)
         {
             con.Open();
-            SqlCommand cmd = new SqlCommand("UPDATE Bookings SET (CheckInDate=@CheckInDate) WHERE BookingID=@BookingID", con);
+            SqlCommand cmd = new SqlCommand("UPDATE Bookings SET CheckInDate=@CheckInDate WHERE BookingID=@BookingID", con);
             cmd.Parameters.AddWithValue("@BookingID", bookingID);
             cmd.Parameters.AddWithValue("@CheckInDate", newCheckInDate);
             cmd.ExecuteNonQuery();
@@ -339,7 +369,7 @@ namespace Phumla_Kamnandi_Booking_system.Database_Layer
         public static void UpdateBookingCheckOutDate(string bookingID, string newCheckOutDate)
         {
             con.Open();
-            SqlCommand cmd = new SqlCommand("UPDATE Bookings SET (CheckOutDate=@CheckOutDate) WHERE BookingID=@BookingID", con);
+            SqlCommand cmd = new SqlCommand("UPDATE Bookings SET CheckOutDate=@CheckOutDate WHERE BookingID=@BookingID", con);
             cmd.Parameters.AddWithValue("@BookingID", bookingID);
             cmd.Parameters.AddWithValue("@CheckOutDate", newCheckOutDate);
             cmd.ExecuteNonQuery();
@@ -350,7 +380,7 @@ namespace Phumla_Kamnandi_Booking_system.Database_Layer
         public static void UpdateBookingRoomID(string bookingID, string newRoomID)
         {
             con.Open();
-            SqlCommand cmd = new SqlCommand("UPDATE Bookings SET (RoomID=@newRoomID) WHERE BookingID=@BookingID", con);
+            SqlCommand cmd = new SqlCommand("UPDATE Bookings SET RoomID=@newRoomID WHERE BookingID=@BookingID", con);
             cmd.Parameters.AddWithValue("@BookingID", bookingID);
             cmd.Parameters.AddWithValue("@newRoomID", newRoomID);
             cmd.ExecuteNonQuery();
@@ -365,6 +395,19 @@ namespace Phumla_Kamnandi_Booking_system.Database_Layer
             bool exists = (int)cmd.ExecuteScalar() == 1;
             con.Close();
             return exists;
+        }
+
+        public static DataTable displayBookingInfo(string bookingID)
+        {
+            con.Open();
+            SqlCommand cmd = new SqlCommand("select * from Bookings where BookingID = @bookingID ", con);
+            cmd.Parameters.AddWithValue("@bookingID", bookingID);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            con.Close();
+
+            return dt;
         }
 
         #endregion

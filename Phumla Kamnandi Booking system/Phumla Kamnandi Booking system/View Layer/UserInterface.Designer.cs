@@ -81,6 +81,7 @@
             this.homePanel = new System.Windows.Forms.Panel();
             this.confirmButton = new System.Windows.Forms.Button();
             this.editReservationPanel = new System.Windows.Forms.Panel();
+            this.label23 = new System.Windows.Forms.Label();
             this.secondReturnHomeButton = new System.Windows.Forms.Button();
             this.saveNewCheckOutDate = new System.Windows.Forms.Button();
             this.saveNewCheckInDate = new System.Windows.Forms.Button();
@@ -99,12 +100,19 @@
             this.cancelBookingIDTxtBx = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.deleteBookingButton = new System.Windows.Forms.Button();
-            this.label23 = new System.Windows.Forms.Label();
             this.existingGuestPanel = new System.Windows.Forms.Panel();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
             this.existingGuestIDNumberTxtBx = new System.Windows.Forms.TextBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
             this.fakePreviousButton = new System.Windows.Forms.Button();
+            this.enquirePanel = new System.Windows.Forms.Panel();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.bookingEnquiryTxtBx = new System.Windows.Forms.TextBox();
+            this.bookingInfoLabel = new System.Windows.Forms.Label();
+            this.bookingEnquiryGridView = new System.Windows.Forms.DataGridView();
+            this.enquiryEnterBtn = new System.Windows.Forms.Button();
+            this.enquiryPreviousButton = new System.Windows.Forms.Button();
             this.availableRoomsPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.reservationPanel.SuspendLayout();
@@ -116,6 +124,8 @@
             this.editReservationPanel.SuspendLayout();
             this.cancelBookingPanel.SuspendLayout();
             this.existingGuestPanel.SuspendLayout();
+            this.enquirePanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bookingEnquiryGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -199,7 +209,7 @@
             // 
             // PreviousButton
             // 
-            this.PreviousButton.Location = new System.Drawing.Point(147, 486);
+            this.PreviousButton.Location = new System.Drawing.Point(142, 482);
             this.PreviousButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PreviousButton.Name = "PreviousButton";
             this.PreviousButton.Size = new System.Drawing.Size(88, 33);
@@ -617,6 +627,7 @@
             this.makeEnquiryButton.TabIndex = 3;
             this.makeEnquiryButton.Text = "Make Enquiry";
             this.makeEnquiryButton.UseVisualStyleBackColor = true;
+            this.makeEnquiryButton.Click += new System.EventHandler(this.makeEnquiryButton_Click);
             // 
             // HomeLabel
             // 
@@ -673,6 +684,16 @@
             this.editReservationPanel.Name = "editReservationPanel";
             this.editReservationPanel.Size = new System.Drawing.Size(809, 471);
             this.editReservationPanel.TabIndex = 15;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Location = new System.Drawing.Point(291, 15);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(209, 39);
+            this.label23.TabIndex = 14;
+            this.label23.Text = "Edit Booking";
             // 
             // secondReturnHomeButton
             // 
@@ -855,16 +876,6 @@
             this.deleteBookingButton.UseVisualStyleBackColor = true;
             this.deleteBookingButton.Click += new System.EventHandler(this.deleteBookingButton_Click);
             // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(291, 15);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(209, 39);
-            this.label23.TabIndex = 14;
-            this.label23.Text = "Edit Booking";
-            // 
             // existingGuestPanel
             // 
             this.existingGuestPanel.Controls.Add(this.existingGuestIDNumberTxtBx);
@@ -875,15 +886,12 @@
             this.existingGuestPanel.Size = new System.Drawing.Size(820, 477);
             this.existingGuestPanel.TabIndex = 17;
             // 
-            // label24
+            // existingGuestIDNumberTxtBx
             // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(291, 11);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(236, 39);
-            this.label24.TabIndex = 0;
-            this.label24.Text = "Existing Guest";
+            this.existingGuestIDNumberTxtBx.Location = new System.Drawing.Point(319, 189);
+            this.existingGuestIDNumberTxtBx.Name = "existingGuestIDNumberTxtBx";
+            this.existingGuestIDNumberTxtBx.Size = new System.Drawing.Size(171, 22);
+            this.existingGuestIDNumberTxtBx.TabIndex = 2;
             // 
             // label25
             // 
@@ -895,16 +903,19 @@
             this.label25.TabIndex = 1;
             this.label25.Text = "Enter ID number:";
             // 
-            // existingGuestIDNumberTxtBx
+            // label24
             // 
-            this.existingGuestIDNumberTxtBx.Location = new System.Drawing.Point(319, 189);
-            this.existingGuestIDNumberTxtBx.Name = "existingGuestIDNumberTxtBx";
-            this.existingGuestIDNumberTxtBx.Size = new System.Drawing.Size(171, 22);
-            this.existingGuestIDNumberTxtBx.TabIndex = 2;
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Location = new System.Drawing.Point(291, 11);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(236, 39);
+            this.label24.TabIndex = 0;
+            this.label24.Text = "Existing Guest";
             // 
             // fakePreviousButton
             // 
-            this.fakePreviousButton.Location = new System.Drawing.Point(147, 486);
+            this.fakePreviousButton.Location = new System.Drawing.Point(142, 482);
             this.fakePreviousButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.fakePreviousButton.Name = "fakePreviousButton";
             this.fakePreviousButton.Size = new System.Drawing.Size(88, 33);
@@ -914,17 +925,101 @@
             this.fakePreviousButton.Visible = false;
             this.fakePreviousButton.Click += new System.EventHandler(this.fakePreviousButton_Click);
             // 
+            // enquirePanel
+            // 
+            this.enquirePanel.Controls.Add(this.fakePreviousButton);
+            this.enquirePanel.Controls.Add(this.PreviousButton);
+            this.enquirePanel.Controls.Add(this.enquiryPreviousButton);
+            this.enquirePanel.Controls.Add(this.enquiryEnterBtn);
+            this.enquirePanel.Controls.Add(this.bookingEnquiryGridView);
+            this.enquirePanel.Controls.Add(this.bookingInfoLabel);
+            this.enquirePanel.Controls.Add(this.bookingEnquiryTxtBx);
+            this.enquirePanel.Controls.Add(this.label27);
+            this.enquirePanel.Controls.Add(this.label26);
+            this.enquirePanel.Location = new System.Drawing.Point(5, 4);
+            this.enquirePanel.Name = "enquirePanel";
+            this.enquirePanel.Size = new System.Drawing.Size(820, 515);
+            this.enquirePanel.TabIndex = 19;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.Location = new System.Drawing.Point(275, 16);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(266, 39);
+            this.label26.TabIndex = 0;
+            this.label26.Text = "Booking Enquiry";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.Location = new System.Drawing.Point(56, 118);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(141, 20);
+            this.label27.TabIndex = 1;
+            this.label27.Text = "Enter Booking ID:";
+            // 
+            // bookingEnquiryTxtBx
+            // 
+            this.bookingEnquiryTxtBx.Location = new System.Drawing.Point(287, 118);
+            this.bookingEnquiryTxtBx.Name = "bookingEnquiryTxtBx";
+            this.bookingEnquiryTxtBx.Size = new System.Drawing.Size(240, 22);
+            this.bookingEnquiryTxtBx.TabIndex = 2;
+            // 
+            // bookingInfoLabel
+            // 
+            this.bookingInfoLabel.AutoSize = true;
+            this.bookingInfoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bookingInfoLabel.Location = new System.Drawing.Point(306, 246);
+            this.bookingInfoLabel.Name = "bookingInfoLabel";
+            this.bookingInfoLabel.Size = new System.Drawing.Size(190, 25);
+            this.bookingInfoLabel.TabIndex = 3;
+            this.bookingInfoLabel.Text = "Booking Information:";
+            this.bookingInfoLabel.Visible = false;
+            // 
+            // bookingEnquiryGridView
+            // 
+            this.bookingEnquiryGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.bookingEnquiryGridView.Location = new System.Drawing.Point(13, 298);
+            this.bookingEnquiryGridView.Name = "bookingEnquiryGridView";
+            this.bookingEnquiryGridView.RowHeadersWidth = 51;
+            this.bookingEnquiryGridView.RowTemplate.Height = 24;
+            this.bookingEnquiryGridView.Size = new System.Drawing.Size(789, 93);
+            this.bookingEnquiryGridView.TabIndex = 4;
+            this.bookingEnquiryGridView.Visible = false;
+            // 
+            // enquiryEnterBtn
+            // 
+            this.enquiryEnterBtn.Location = new System.Drawing.Point(366, 167);
+            this.enquiryEnterBtn.Name = "enquiryEnterBtn";
+            this.enquiryEnterBtn.Size = new System.Drawing.Size(75, 23);
+            this.enquiryEnterBtn.TabIndex = 5;
+            this.enquiryEnterBtn.Text = "Enter";
+            this.enquiryEnterBtn.UseVisualStyleBackColor = true;
+            this.enquiryEnterBtn.Click += new System.EventHandler(this.enquiryEnterBtn_Click);
+            // 
+            // enquiryPreviousButton
+            // 
+            this.enquiryPreviousButton.Location = new System.Drawing.Point(142, 482);
+            this.enquiryPreviousButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.enquiryPreviousButton.Name = "enquiryPreviousButton";
+            this.enquiryPreviousButton.Size = new System.Drawing.Size(88, 33);
+            this.enquiryPreviousButton.TabIndex = 19;
+            this.enquiryPreviousButton.Text = "Previous";
+            this.enquiryPreviousButton.UseVisualStyleBackColor = true;
+            this.enquiryPreviousButton.Visible = false;
+            this.enquiryPreviousButton.Click += new System.EventHandler(this.enquiryPreviousButton_Click);
+            // 
             // UserInterface
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(827, 567);
-            this.Controls.Add(this.fakePreviousButton);
             this.Controls.Add(this.NextButton);
-            this.Controls.Add(this.PreviousButton);
             this.Controls.Add(this.confirmButton);
-            this.Controls.Add(this.newGuestOrOldGuestPanel);
-            this.Controls.Add(this.homePanel);
+            this.Controls.Add(this.enquirePanel);
             this.Controls.Add(this.existingGuestPanel);
             this.Controls.Add(this.cancelBookingPanel);
             this.Controls.Add(this.editReservationPanel);
@@ -933,6 +1028,8 @@
             this.Controls.Add(this.addGuestPanel);
             this.Controls.Add(this.availableRoomsPanel);
             this.Controls.Add(this.reservationPanel);
+            this.Controls.Add(this.newGuestOrOldGuestPanel);
+            this.Controls.Add(this.homePanel);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "UserInterface";
             this.Text = "UserInterface";
@@ -958,6 +1055,9 @@
             this.cancelBookingPanel.PerformLayout();
             this.existingGuestPanel.ResumeLayout(false);
             this.existingGuestPanel.PerformLayout();
+            this.enquirePanel.ResumeLayout(false);
+            this.enquirePanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bookingEnquiryGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1041,5 +1141,13 @@
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Button fakePreviousButton;
+        private System.Windows.Forms.Panel enquirePanel;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.TextBox bookingEnquiryTxtBx;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.DataGridView bookingEnquiryGridView;
+        private System.Windows.Forms.Label bookingInfoLabel;
+        private System.Windows.Forms.Button enquiryEnterBtn;
+        private System.Windows.Forms.Button enquiryPreviousButton;
     }
 }
