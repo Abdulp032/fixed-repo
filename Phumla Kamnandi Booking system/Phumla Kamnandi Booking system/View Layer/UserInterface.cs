@@ -40,10 +40,14 @@ namespace Phumla_Kamnandi_Booking_system.View_Layer
             listPanel.Add(cancelBookingPanel);   // at index 8
             listPanel.Add(existingGuestPanel);   // at index 9
             listPanel.Add(enquirePanel);         // at index 10
+            listPanel.Add(viewAllGuestsPanel);      // at index 11
+            listPanel.Add(viewAllBookingsPanel);    // at index 12
             listPanel[index].BringToFront();
             NextButton.Visible = false;
             PreviousButton.Visible = false;
 
+            // test code
+            
         }
 
         private void PreviousButton_Click(object sender, EventArgs e)
@@ -96,7 +100,7 @@ namespace Phumla_Kamnandi_Booking_system.View_Layer
                 {                                                                                                       // checking in DB if guestId exists
                     MessageBox.Show("Guest has been found in system, proceed with booking.");
                     guest = new Guest();
-                    guest.GuestID = existingGuestIDNumberTxtBx.Text;
+                    guest.GuestID = DB.GetGuestIDFromIDNo(existingGuestIDNumberTxtBx.Text);
                     creditCardPanel.BringToFront();
                     fakePreviousButton.Visible = false;
                     NextButton.Visible=false;
@@ -319,5 +323,34 @@ namespace Phumla_Kamnandi_Booking_system.View_Layer
                 roomID = int.Parse(cellValue.ToString());
             }
         }
+
+        // Problematic Code 
+        private void returnFromViewAllGuests_Click(object sender, EventArgs e)
+        {
+            homePanel.BringToFront();
+            index = 0;
+        }
+
+        private void viewAllGuestsButton_Click(object sender, EventArgs e)
+        {
+            index = 11;
+            listPanel[index].BringToFront();
+            viewAllGuestsDataGridView.DataSource = DB.DisplayGuestInfo();
+        }
+
+        private void returnFromViewingBookingsButton_Click(object sender, EventArgs e)
+        {
+            homePanel.BringToFront();
+            index = 0;
+        }
+
+        private void viewAllBookingsButton_Click(object sender, EventArgs e)
+        {
+            index = 12;
+            listPanel[index].BringToFront();
+            viewAllBookingsDataGridView.DataSource = DB.DisplayAllBookingInfo();
+        }
+
+        
     }
 }

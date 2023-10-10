@@ -63,7 +63,7 @@ namespace Phumla_Kamnandi_Booking_system.Database_Layer
         }
         #endregion
 
-        public void FillDataSet(string aSQLstring, string aTable)
+        /*public void FillDataSet(string aSQLstring, string aTable)
         {
             //fills dataset fresh from the db for a specific table and with a specific Query
             try
@@ -78,9 +78,9 @@ namespace Phumla_Kamnandi_Booking_system.Database_Layer
             {
                 MessageBox.Show(errObj.Message + "  " + errObj.StackTrace);
             }
-        }
+        }*/
 
-        protected bool UpdateDataSource(string sqlLocal, string table)
+        /*protected bool UpdateDataSource(string sqlLocal, string table)
         {
             bool success;
             try
@@ -104,7 +104,7 @@ namespace Phumla_Kamnandi_Booking_system.Database_Layer
             {
             }
             return success;
-        }
+        }*/
 
         #region Utility Methods
 
@@ -292,6 +292,7 @@ namespace Phumla_Kamnandi_Booking_system.Database_Layer
             con.Close();
         }
 
+        // Removes information about a guest (deletes record from database)
         public static void DeleteGuest(string guestID)
         {
             con.Open();
@@ -307,6 +308,7 @@ namespace Phumla_Kamnandi_Booking_system.Database_Layer
             con.Close();
         }
 
+        // Cacels a guest booking (deletes record from database)
         public static void DeleteBooking(string bookingID)
         {
             con.Open();
@@ -404,6 +406,40 @@ namespace Phumla_Kamnandi_Booking_system.Database_Layer
             con.Close();
 
             return dt;
+        }
+
+        public static DataTable DisplayGuestInfo()
+        {
+            con.Open();
+            SqlCommand cmd = new SqlCommand("SELECT * FROM Guests", con);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            con.Close();
+
+            return dt;
+        }
+
+        public static DataTable DisplayAllBookingInfo()
+        {
+            con.Open();
+            SqlCommand cmd = new SqlCommand("SELECT * FROM Bookings", con);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            con.Close();
+            return dt;
+        }
+
+        public static string GetGuestIDFromIDNo(string IDNumber)
+        {
+            con.Open();
+            SqlCommand cmd = new SqlCommand("SELECT GuestID FROM  Guests WHERE IDNumber=@IDNumber",con);
+            cmd.Parameters.AddWithValue("@IDNumber", IDNumber);
+            object guestID = cmd.ExecuteScalar();
+
+            con.Close();
+            return guestID.ToString();
         }
 
         #endregion

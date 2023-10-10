@@ -80,6 +80,8 @@
             this.makeEnquiryButton = new System.Windows.Forms.Button();
             this.HomeLabel = new System.Windows.Forms.Label();
             this.homePanel = new System.Windows.Forms.Panel();
+            this.viewAllBookingsButton = new System.Windows.Forms.Button();
+            this.viewAllGuestsButton = new System.Windows.Forms.Button();
             this.confirmButton = new System.Windows.Forms.Button();
             this.editReservationPanel = new System.Windows.Forms.Panel();
             this.label23 = new System.Windows.Forms.Label();
@@ -114,6 +116,14 @@
             this.bookingEnquiryTxtBx = new System.Windows.Forms.TextBox();
             this.label27 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
+            this.viewAllGuestsPanel = new System.Windows.Forms.Panel();
+            this.returnFromViewAllGuests = new System.Windows.Forms.Button();
+            this.viewAllGuestsDataGridView = new System.Windows.Forms.DataGridView();
+            this.label29 = new System.Windows.Forms.Label();
+            this.viewAllBookingsPanel = new System.Windows.Forms.Panel();
+            this.returnFromViewingBookingsButton = new System.Windows.Forms.Button();
+            this.viewAllBookingsDataGridView = new System.Windows.Forms.DataGridView();
+            this.label30 = new System.Windows.Forms.Label();
             this.availableRoomsPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.reservationPanel.SuspendLayout();
@@ -127,6 +137,10 @@
             this.existingGuestPanel.SuspendLayout();
             this.enquirePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bookingEnquiryGridView)).BeginInit();
+            this.viewAllGuestsPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.viewAllGuestsDataGridView)).BeginInit();
+            this.viewAllBookingsPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.viewAllBookingsDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -601,7 +615,7 @@
             // 
             // makeReservationButton
             // 
-            this.makeReservationButton.Location = new System.Drawing.Point(173, 117);
+            this.makeReservationButton.Location = new System.Drawing.Point(77, 112);
             this.makeReservationButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.makeReservationButton.Name = "makeReservationButton";
             this.makeReservationButton.Size = new System.Drawing.Size(171, 105);
@@ -612,7 +626,7 @@
             // 
             // editReservationButton
             // 
-            this.editReservationButton.Location = new System.Drawing.Point(437, 117);
+            this.editReservationButton.Location = new System.Drawing.Point(307, 112);
             this.editReservationButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.editReservationButton.Name = "editReservationButton";
             this.editReservationButton.Size = new System.Drawing.Size(171, 105);
@@ -623,7 +637,7 @@
             // 
             // cancelReservationButton
             // 
-            this.cancelReservationButton.Location = new System.Drawing.Point(173, 290);
+            this.cancelReservationButton.Location = new System.Drawing.Point(77, 286);
             this.cancelReservationButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cancelReservationButton.Name = "cancelReservationButton";
             this.cancelReservationButton.Size = new System.Drawing.Size(171, 105);
@@ -634,7 +648,7 @@
             // 
             // makeEnquiryButton
             // 
-            this.makeEnquiryButton.Location = new System.Drawing.Point(437, 290);
+            this.makeEnquiryButton.Location = new System.Drawing.Point(307, 283);
             this.makeEnquiryButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.makeEnquiryButton.Name = "makeEnquiryButton";
             this.makeEnquiryButton.Size = new System.Drawing.Size(171, 105);
@@ -655,6 +669,8 @@
             // 
             // homePanel
             // 
+            this.homePanel.Controls.Add(this.viewAllBookingsButton);
+            this.homePanel.Controls.Add(this.viewAllGuestsButton);
             this.homePanel.Controls.Add(this.cancelReservationButton);
             this.homePanel.Controls.Add(this.editReservationButton);
             this.homePanel.Controls.Add(this.makeReservationButton);
@@ -665,6 +681,28 @@
             this.homePanel.Name = "homePanel";
             this.homePanel.Size = new System.Drawing.Size(800, 452);
             this.homePanel.TabIndex = 5;
+            // 
+            // viewAllBookingsButton
+            // 
+            this.viewAllBookingsButton.Location = new System.Drawing.Point(515, 283);
+            this.viewAllBookingsButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.viewAllBookingsButton.Name = "viewAllBookingsButton";
+            this.viewAllBookingsButton.Size = new System.Drawing.Size(171, 105);
+            this.viewAllBookingsButton.TabIndex = 6;
+            this.viewAllBookingsButton.Text = "View All Bookings";
+            this.viewAllBookingsButton.UseVisualStyleBackColor = true;
+            this.viewAllBookingsButton.Click += new System.EventHandler(this.viewAllBookingsButton_Click);
+            // 
+            // viewAllGuestsButton
+            // 
+            this.viewAllGuestsButton.Location = new System.Drawing.Point(515, 110);
+            this.viewAllGuestsButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.viewAllGuestsButton.Name = "viewAllGuestsButton";
+            this.viewAllGuestsButton.Size = new System.Drawing.Size(171, 105);
+            this.viewAllGuestsButton.TabIndex = 5;
+            this.viewAllGuestsButton.Text = "View All Guests";
+            this.viewAllGuestsButton.UseVisualStyleBackColor = true;
+            this.viewAllGuestsButton.Click += new System.EventHandler(this.viewAllGuestsButton_Click);
             // 
             // confirmButton
             // 
@@ -1032,14 +1070,99 @@
             this.label26.TabIndex = 0;
             this.label26.Text = "Booking Enquiry";
             // 
+            // viewAllGuestsPanel
+            // 
+            this.viewAllGuestsPanel.Controls.Add(this.returnFromViewAllGuests);
+            this.viewAllGuestsPanel.Controls.Add(this.viewAllGuestsDataGridView);
+            this.viewAllGuestsPanel.Controls.Add(this.label29);
+            this.viewAllGuestsPanel.Location = new System.Drawing.Point(5, 4);
+            this.viewAllGuestsPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.viewAllGuestsPanel.Name = "viewAllGuestsPanel";
+            this.viewAllGuestsPanel.Size = new System.Drawing.Size(803, 452);
+            this.viewAllGuestsPanel.TabIndex = 5;
+            // 
+            // returnFromViewAllGuests
+            // 
+            this.returnFromViewAllGuests.Location = new System.Drawing.Point(283, 370);
+            this.returnFromViewAllGuests.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.returnFromViewAllGuests.Name = "returnFromViewAllGuests";
+            this.returnFromViewAllGuests.Size = new System.Drawing.Size(229, 53);
+            this.returnFromViewAllGuests.TabIndex = 2;
+            this.returnFromViewAllGuests.Text = "Return Home";
+            this.returnFromViewAllGuests.UseVisualStyleBackColor = true;
+            this.returnFromViewAllGuests.Click += new System.EventHandler(this.returnFromViewAllGuests_Click);
+            // 
+            // viewAllGuestsDataGridView
+            // 
+            this.viewAllGuestsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.viewAllGuestsDataGridView.Location = new System.Drawing.Point(9, 63);
+            this.viewAllGuestsDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.viewAllGuestsDataGridView.Name = "viewAllGuestsDataGridView";
+            this.viewAllGuestsDataGridView.RowHeadersWidth = 51;
+            this.viewAllGuestsDataGridView.Size = new System.Drawing.Size(788, 300);
+            this.viewAllGuestsDataGridView.TabIndex = 1;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.Location = new System.Drawing.Point(260, 17);
+            this.label29.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(271, 39);
+            this.label29.TabIndex = 0;
+            this.label29.Text = "View All Guests";
+            // 
+            // viewAllBookingsPanel
+            // 
+            this.viewAllBookingsPanel.Controls.Add(this.returnFromViewingBookingsButton);
+            this.viewAllBookingsPanel.Controls.Add(this.viewAllBookingsDataGridView);
+            this.viewAllBookingsPanel.Controls.Add(this.label30);
+            this.viewAllBookingsPanel.Location = new System.Drawing.Point(5, 4);
+            this.viewAllBookingsPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.viewAllBookingsPanel.Name = "viewAllBookingsPanel";
+            this.viewAllBookingsPanel.Size = new System.Drawing.Size(803, 452);
+            this.viewAllBookingsPanel.TabIndex = 6;
+            // 
+            // returnFromViewingBookingsButton
+            // 
+            this.returnFromViewingBookingsButton.Location = new System.Drawing.Point(276, 370);
+            this.returnFromViewingBookingsButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.returnFromViewingBookingsButton.Name = "returnFromViewingBookingsButton";
+            this.returnFromViewingBookingsButton.Size = new System.Drawing.Size(229, 53);
+            this.returnFromViewingBookingsButton.TabIndex = 2;
+            this.returnFromViewingBookingsButton.Text = "Return Home";
+            this.returnFromViewingBookingsButton.UseVisualStyleBackColor = true;
+            this.returnFromViewingBookingsButton.Click += new System.EventHandler(this.returnFromViewingBookingsButton_Click);
+            // 
+            // viewAllBookingsDataGridView
+            // 
+            this.viewAllBookingsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.viewAllBookingsDataGridView.Location = new System.Drawing.Point(9, 57);
+            this.viewAllBookingsDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.viewAllBookingsDataGridView.Name = "viewAllBookingsDataGridView";
+            this.viewAllBookingsDataGridView.RowHeadersWidth = 51;
+            this.viewAllBookingsDataGridView.Size = new System.Drawing.Size(788, 286);
+            this.viewAllBookingsDataGridView.TabIndex = 1;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.Location = new System.Drawing.Point(245, 11);
+            this.label30.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(307, 39);
+            this.label30.TabIndex = 0;
+            this.label30.Text = "View All Bookings";
+            // 
             // UserInterface
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(827, 567);
+            this.ClientSize = new System.Drawing.Size(832, 537);
             this.Controls.Add(this.NextButton);
             this.Controls.Add(this.confirmButton);
-            this.Controls.Add(this.homePanel);
             this.Controls.Add(this.enquirePanel);
             this.Controls.Add(this.existingGuestPanel);
             this.Controls.Add(this.cancelBookingPanel);
@@ -1050,6 +1173,9 @@
             this.Controls.Add(this.availableRoomsPanel);
             this.Controls.Add(this.reservationPanel);
             this.Controls.Add(this.newGuestOrOldGuestPanel);
+            this.Controls.Add(this.homePanel);
+            this.Controls.Add(this.viewAllBookingsPanel);
+            this.Controls.Add(this.viewAllGuestsPanel);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "UserInterface";
             this.Text = "UserInterface";
@@ -1078,6 +1204,12 @@
             this.enquirePanel.ResumeLayout(false);
             this.enquirePanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bookingEnquiryGridView)).EndInit();
+            this.viewAllGuestsPanel.ResumeLayout(false);
+            this.viewAllGuestsPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.viewAllGuestsDataGridView)).EndInit();
+            this.viewAllBookingsPanel.ResumeLayout(false);
+            this.viewAllBookingsPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.viewAllBookingsDataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1170,5 +1302,15 @@
         private System.Windows.Forms.Button enquiryEnterBtn;
         private System.Windows.Forms.Button enquiryPreviousButton;
         private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Panel viewAllGuestsPanel;
+        private System.Windows.Forms.Button returnFromViewAllGuests;
+        private System.Windows.Forms.DataGridView viewAllGuestsDataGridView;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Button viewAllGuestsButton;
+        private System.Windows.Forms.Panel viewAllBookingsPanel;
+        private System.Windows.Forms.Button returnFromViewingBookingsButton;
+        private System.Windows.Forms.DataGridView viewAllBookingsDataGridView;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Button viewAllBookingsButton;
     }
 }
